@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace comGUI {
@@ -16,17 +10,20 @@ namespace comGUI {
             InitializeComponent();
              this.FormClosing += back;
         }
-
-        
         private void back(object sender, EventArgs e) {
             if(Program.start.Visible==false) { 
             Program.start.Show();}
             else { 
-                 this.Dispose();
-                 this.Close();
+                 Dispose();
                }
         }
-
+        private void textBox1_TextChanged(object sender, EventArgs e) {
+            bool ok=true;
+            for(int a=0;a<textBox1.TextLength;a++) {
+                if(!allow.Contains(textBox1.Text.ToCharArray()[a].ToString())) {ok=false; }
+            }      
+            if(!ok) {textBox1.Text=oldnum1; }else {oldnum1=textBox1.Text; }                                          
+        }
         private void textBox2_TextChanged(object sender, EventArgs e) {
              bool ok=true;
             for(int a=0;a<textBox2.TextLength;a++) {
@@ -34,7 +31,6 @@ namespace comGUI {
             }      
             if(!ok) {textBox2.Text=oldnum2;}else {oldnum2=textBox2.Text; }         
         }
-
         private void button1_Click(object sender, EventArgs e) {
             label3.Visible=true;
             label4.Visible=true;
@@ -59,15 +55,5 @@ namespace comGUI {
             }
             
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e) {
-            bool ok=true;
-            for(int a=0;a<textBox1.TextLength;a++) {
-                if(!allow.Contains(textBox1.Text.ToCharArray()[a].ToString())) {ok=false; }
-            }      
-            if(!ok) {textBox1.Text=oldnum1; }else {oldnum1=textBox1.Text; }                                          
-        }
     }
-
-    
 }

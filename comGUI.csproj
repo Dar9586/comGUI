@@ -12,6 +12,22 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Antonio\Desktop\Informatica\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -22,6 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\Custom.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,7 +49,40 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>FA25607E79F9932B6D73AE86D529C94323B81E0A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>comGUI_ChiaveTemporanea.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NCalc">
+      <HintPath>..\..\ita\ita\ita\DLL\NCalc.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvokeLib">
+      <HintPath>..\..\ita\ita\ita\DLL\PInvokeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="SpecImporter">
+      <HintPath>..\..\ita\ita\ita\DLL\SpecImporter.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,17 +96,71 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Giochi\Snake\Snake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Snake\Snake.Designer.cs">
+      <DependentUpon>Snake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Snake\SnakeMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Snake\SnakeMenu.Designer.cs">
+      <DependentUpon>SnakeMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Snake\SnakeSingle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Snake\SnakeSingle.Designer.cs">
+      <DependentUpon>SnakeSingle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Matematica\Calcolatrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matematica\Calcolatrice.Designer.cs">
+      <DependentUpon>Calcolatrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Matematica\Convertitore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matematica\Convertitore.Designer.cs">
+      <DependentUpon>Convertitore.cs</DependentUpon>
+    </Compile>
     <Compile Include="First.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="First.Designer.cs">
       <DependentUpon>First.cs</DependentUpon>
     </Compile>
-    <Compile Include="MCD.cs">
+    <Compile Include="Giochi\Game2048.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MCD.Designer.cs">
+    <Compile Include="Giochi\Game2048.Designer.cs">
+      <DependentUpon>Game2048.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Matematica\MCD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matematica\MCD.Designer.cs">
       <DependentUpon>MCD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Memory\Memory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Memory\Memory.Designer.cs">
+      <DependentUpon>Memory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Memory\MemoryMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Memory\MemoryMenu.Designer.cs">
+      <DependentUpon>MemoryMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Memory\MemorySetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Memory\MemorySetting.Designer.cs">
+      <DependentUpon>MemorySetting.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -64,26 +168,173 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Matematica\Notazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matematica\Notazione.Designer.cs">
+      <DependentUpon>Notazione.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Password\Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Password\Password.Designer.cs">
+      <DependentUpon>Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Password\PasswordResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Password\PasswordResult.Designer.cs">
+      <DependentUpon>PasswordResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Matematica\Scomposizione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matematica\Scomposizione.Designer.cs">
+      <DependentUpon>Scomposizione.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Matematica\Semplificazione.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matematica\Semplificazione.Designer.cs">
+      <DependentUpon>Semplificazione.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Simon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Simon.Designer.cs">
+      <DependentUpon>Simon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Switch\Switch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Switch\Switch.Designer.cs">
+      <DependentUpon>Switch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Switch\SwitchMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Switch\SwitchMenu.Designer.cs">
+      <DependentUpon>SwitchMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Switch\SwitchSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Switch\SwitchSetting.Designer.cs">
+      <DependentUpon>SwitchSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Sudoku\Sudoku.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Sudoku\Sudoku.Designer.cs">
+      <DependentUpon>Sudoku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Tiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Tiles.Designer.cs">
+      <DependentUpon>Tiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Tris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Tris.Designer.cs">
+      <DependentUpon>Tris.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Giochi\Snake\Snake.resx">
+      <DependentUpon>Snake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Snake\SnakeMenu.resx">
+      <DependentUpon>SnakeMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Snake\SnakeSingle.resx">
+      <DependentUpon>SnakeSingle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Sudoku\Sudoku.resx">
+      <DependentUpon>Sudoku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Switch\Switch.resx">
+      <DependentUpon>Switch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Matematica\Calcolatrice.resx">
+      <DependentUpon>Calcolatrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Matematica\Convertitore.resx">
+      <DependentUpon>Convertitore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="First.resx">
       <DependentUpon>First.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MCD.resx">
+    <EmbeddedResource Include="Giochi\Game2048.resx">
+      <DependentUpon>Game2048.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Matematica\MCD.resx">
       <DependentUpon>MCD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Memory\Memory.resx">
+      <DependentUpon>Memory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Memory\MemoryMenu.resx">
+      <DependentUpon>MemoryMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Memory\MemorySetting.resx">
+      <DependentUpon>MemorySetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Matematica\Notazione.resx">
+      <DependentUpon>Notazione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Password\Password.resx">
+      <DependentUpon>Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Password\PasswordResult.resx">
+      <DependentUpon>PasswordResult.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Matematica\Scomposizione.resx">
+      <DependentUpon>Scomposizione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Matematica\Semplificazione.resx">
+      <DependentUpon>Semplificazione.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Simon.resx">
+      <DependentUpon>Simon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Switch\SwitchMenu.resx">
+      <DependentUpon>SwitchMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Switch\SwitchSetting.resx">
+      <DependentUpon>SwitchSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Tiles.resx">
+      <DependentUpon>Tiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Tris.resx">
+      <DependentUpon>Tris.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="comGUI_ChiaveTemporanea.pfx" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -97,8 +348,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Giochi\Sudoku\SudokuScheme.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

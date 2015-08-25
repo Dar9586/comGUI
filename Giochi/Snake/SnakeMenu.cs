@@ -1,11 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace comGUI {
-    public partial class First : Form {
-        public First() {
+    public partial class SnakeMenu : Form {
+        public SnakeMenu() {
             InitializeComponent();
-            this.FormClosing += back;
+        this.FormClosing += back;
         }
         private void back(object sender, EventArgs e) {
             if(Program.start.Visible==false) { 
@@ -14,8 +21,12 @@ namespace comGUI {
                  Dispose();
                }
         }
+
         private void button1_Click(object sender, EventArgs e) {
-            label1.Text="Hai scritto: "+textBox1.Text;
-        }  
+            Snake s=new Snake();
+            s.men=this;
+            s.Show();
+            Hide();
+        }
     }
 }
