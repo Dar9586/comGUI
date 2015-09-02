@@ -268,7 +268,7 @@
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            
             this.Name = "Tris";
             this.Text = "Tris";
             this.ResumeLayout(false);

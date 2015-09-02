@@ -80,7 +80,7 @@
             this.Controls.Add(this.numericUpDown1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            
             this.Name = "Convertitore";
             this.Text = "Convertitore";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

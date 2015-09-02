@@ -125,7 +125,7 @@
             this.ForeColor = System.Drawing.Color.Cyan;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            
             this.Name = "Semplificazione";
             this.Text = "Semplificazione";
             this.ResumeLayout(false);

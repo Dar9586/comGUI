@@ -261,6 +261,8 @@
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Sudoku";
             this.Text = "Sudoku";
             this.Load += new System.EventHandler(this.Sudoku_Load);

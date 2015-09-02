@@ -121,5 +121,29 @@ namespace comGUI {
             this.Hide();
         
         }
+
+        private void button18_Click(object sender, EventArgs e) {
+            Piano s=new Piano();
+            s.Show();
+            this.Hide();
+        }
+
+        private void button19_Click(object sender, EventArgs e) {
+            Anagrammi s=new Anagrammi();
+            s.Show();
+            this.Hide();
+        }
+
+        private void button20_Click(object sender, EventArgs e) {
+            Galattron s=new Galattron();
+            s.Show();
+            this.Hide();
+        }
+
+        private void button21_Click(object sender, EventArgs e) {
+            Minesweeper s=new Minesweeper();
+            s.Show();
+            this.Hide();
+        }
     }
 }

@@ -61,6 +61,65 @@ namespace comGUI.Properties {
         }
         
         /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap InitChar {
+            get {
+                object obj = ResourceManager.GetObject("InitChar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap LChar {
+            get {
+                object obj = ResourceManager.GetObject("LChar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap LEnemy {
+            get {
+                object obj = ResourceManager.GetObject("LEnemy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap RChar {
+            get {
+                object obj = ResourceManager.GetObject("RChar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap REnemy {
+            get {
+                object obj = ResourceManager.GetObject("REnemy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.IO.UnmanagedMemoryStream simile a System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream Sound {
+            get {
+                return ResourceManager.GetStream("Sound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a 895316472674285391213497568641287539829513467375649821963724158752138946184956732
         ///852496371496137285371258649563284917728519643914736582135729648964851372827463195
         ///498317562673524918512869374724689153389451762651723498235971846147836295986245137

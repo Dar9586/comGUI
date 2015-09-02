@@ -52,7 +52,7 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            
             this.Name = "SnakeSingle";
             this.Text = "Clicca sulla schemata per iniziare.";
             this.Load += new System.EventHandler(this.SnakeSingle_Load);

@@ -150,7 +150,7 @@
             this.ForeColor = System.Drawing.Color.Cyan;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            
             this.Name = "Simon";
             this.Text = "Simon";
             this.ResumeLayout(false);

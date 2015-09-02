@@ -109,7 +109,7 @@
             this.ForeColor = System.Drawing.Color.Cyan;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            
             this.Name = "Tiles";
             this.Text = "49 Tiles";
             this.Load += new System.EventHandler(this.Tiles_Load);

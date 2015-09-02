@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Reflection;
 
 namespace comGUI {
     public partial class Sudoku : Form {
@@ -217,22 +212,12 @@ namespace comGUI {
             }
             s.Clear();
             await Task.Delay(500);
-            /*string o="5 7 4 3 1 2 9 6 8 1 3 6 8 9 7 5 2 4 9 8 2 5 4 6 3 7 1 4 2 3 1 8 5 6 9 7 7 9 5 6 2 4 1 8 3 8 6 1 7 3 9 4 5 2 6 5 8 4 7 3 2 1 9 2 4 7 9 5 1 8 3 6 3 1 9 2 6 8 7 4 5";
-                List<string> oo=new List<string>(o.Split(' '));
-            for(int a=0;a<81;a++) {scheme.Add(int.Parse(oo[a])); }*/
-            
            int gh=comGUI.Menu.rnd.Next(schemed.Count);
             string c=schemed[gh];
             
             List<int>h=new List<int>();
                     for(int a=0;a<81;a++) {h.Add(int.Parse(c.ToCharArray()[adapter[a]].ToString())); }
                     scheme=h;
-
-           //Properties.Settings.Default.a
-           // for(int a=0;a<x.Length;a++) {Debug.WriteLine(x[a]); }Debug.WriteLine("");
-          
-            //using (StreamWriter writer = new StreamWriter(x)) { writer.Write(Properties.Resources.SudokuScheme.Remove(81 * gh, 81)); writer.Close(); }
-            //scheme=create();
              label2.Visible=false;
             label2.Text="";
              label1.Visible=true;
@@ -317,11 +302,6 @@ namespace comGUI {
             label2.Text="Generazione in Corso...";
                 label2.ForeColor=Color.Cyan;
             await Task.Delay(500);
-
-                /*string o="5 7 4 3 1 2 9 6 8 1 3 6 8 9 7 5 2 4 9 8 2 5 4 6 3 7 1 4 2 3 1 8 5 6 9 7 7 9 5 6 2 4 1 8 3 8 6 1 7 3 9 4 5 2 6 5 8 4 7 3 2 1 9 2 4 7 9 5 1 8 3 6 3 1 9 2 6 8 7 4 5";
-                List<string> oo=new List<string>(o.Split(' '));
-            for(int a=0;a<81;a++) {scheme.Add(int.Parse(oo[a])); }
-            */
             if(created.Count<1){
                  int gh=comGUI.Menu.rnd.Next(schemed.Count);
             string c=schemed[gh];
@@ -383,7 +363,6 @@ namespace comGUI {
             else if (keyData == Keys.D7||keyData == Keys.NumPad7 )  {keyd=7;}
             else if (keyData == Keys.D8||keyData == Keys.NumPad8 )  {keyd=8;}
             else if (keyData == Keys.D9||keyData == Keys.NumPad9 )  {keyd=9;}
-            //Debug.WriteLine(selected);
         if(selected!=-1) { 
                 if(keyData==Keys.Up && user[selected]!=9) {keyd=user[selected]+1; }
                 if(keyData==Keys.Down && user[selected]!=0) {keyd=user[selected]-1; }
@@ -391,7 +370,7 @@ namespace comGUI {
          else {list[selected].Text=keyd.ToString(); }
          user[selected]=keyd;
                 bool winner=true;
-                for(int a=0;a<81;a++) {if(user[a]!=scheme[a]) {winner=false;} }//Debug.WriteLine(winner);
+                for(int a=0;a<81;a++) {if(user[a]!=scheme[a]) {winner=false;} }
                 if(winner) {win(true); }
         }
             return true;

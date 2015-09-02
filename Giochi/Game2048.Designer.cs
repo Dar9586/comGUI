@@ -140,7 +140,7 @@
             this.Controls.Add(this.start);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            
             this.Name = "Game2048";
             this.Text = "2048";
             this.Load += new System.EventHandler(this.Game2048_Load);

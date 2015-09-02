@@ -240,7 +240,7 @@
             this.Controls.Add(this.upp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            
             this.Name = "Password";
             this.Text = "Password";
             this.ResumeLayout(false);

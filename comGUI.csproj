@@ -74,15 +74,6 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NCalc">
-      <HintPath>..\..\ita\ita\ita\DLL\NCalc.dll</HintPath>
-    </Reference>
-    <Reference Include="PInvokeLib">
-      <HintPath>..\..\ita\ita\ita\DLL\PInvokeLib.dll</HintPath>
-    </Reference>
-    <Reference Include="SpecImporter">
-      <HintPath>..\..\ita\ita\ita\DLL\SpecImporter.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -96,22 +87,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Giochi\Snake\Snake.cs">
+    <Compile Include="Anagrammi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Giochi\Snake\Snake.Designer.cs">
-      <DependentUpon>Snake.cs</DependentUpon>
+    <Compile Include="Anagrammi.Designer.cs">
+      <DependentUpon>Anagrammi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Giochi\Snake\SnakeMenu.cs">
+    <Compile Include="Giochi\Galattron.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Giochi\Snake\SnakeMenu.Designer.cs">
-      <DependentUpon>SnakeMenu.cs</DependentUpon>
+    <Compile Include="Giochi\Galattron.Designer.cs">
+      <DependentUpon>Galattron.cs</DependentUpon>
     </Compile>
-    <Compile Include="Giochi\Snake\SnakeSingle.cs">
+    <Compile Include="Giochi\SnakeSingle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Giochi\Snake\SnakeSingle.Designer.cs">
+    <Compile Include="Giochi\SnakeSingle.Designer.cs">
       <DependentUpon>SnakeSingle.cs</DependentUpon>
     </Compile>
     <Compile Include="Matematica\Calcolatrice.cs">
@@ -174,6 +165,12 @@
     <Compile Include="Matematica\Notazione.Designer.cs">
       <DependentUpon>Notazione.cs</DependentUpon>
     </Compile>
+    <Compile Include="Minesweeper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Minesweeper.Designer.cs">
+      <DependentUpon>Minesweeper.cs</DependentUpon>
+    </Compile>
     <Compile Include="Password\Password.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +182,12 @@
     </Compile>
     <Compile Include="Password\PasswordResult.Designer.cs">
       <DependentUpon>PasswordResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Piano.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Piano.Designer.cs">
+      <DependentUpon>Piano.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -224,11 +227,16 @@
     <Compile Include="Giochi\Switch\SwitchSetting.Designer.cs">
       <DependentUpon>SwitchSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="Giochi\Sudoku\Sudoku.cs">
+    <Compile Include="Giochi\Sudoku.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Giochi\Sudoku\Sudoku.Designer.cs">
+    <Compile Include="Giochi\Sudoku.Designer.cs">
       <DependentUpon>Sudoku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Test.cs">
       <SubType>Form</SubType>
@@ -248,16 +256,16 @@
     <Compile Include="Giochi\Tris.Designer.cs">
       <DependentUpon>Tris.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Giochi\Snake\Snake.resx">
-      <DependentUpon>Snake.cs</DependentUpon>
+    <EmbeddedResource Include="Anagrammi.resx">
+      <DependentUpon>Anagrammi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Giochi\Snake\SnakeMenu.resx">
-      <DependentUpon>SnakeMenu.cs</DependentUpon>
+    <EmbeddedResource Include="Giochi\Galattron.resx">
+      <DependentUpon>Galattron.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Giochi\Snake\SnakeSingle.resx">
+    <EmbeddedResource Include="Giochi\SnakeSingle.resx">
       <DependentUpon>SnakeSingle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Giochi\Sudoku\Sudoku.resx">
+    <EmbeddedResource Include="Giochi\Sudoku.resx">
       <DependentUpon>Sudoku.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Giochi\Switch\Switch.resx">
@@ -293,22 +301,23 @@
     <EmbeddedResource Include="Matematica\Notazione.resx">
       <DependentUpon>Notazione.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Minesweeper.resx">
+      <DependentUpon>Minesweeper.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Password\Password.resx">
       <DependentUpon>Password.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Password\PasswordResult.resx">
       <DependentUpon>PasswordResult.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Piano.resx">
+      <DependentUpon>Piano.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Matematica\Scomposizione.resx">
       <DependentUpon>Scomposizione.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,7 +342,6 @@
     <EmbeddedResource Include="Giochi\Tris.resx">
       <DependentUpon>Tris.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="comGUI_ChiaveTemporanea.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -361,7 +369,17 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Giochi\Sudoku\SudokuScheme.txt" />
+    <Resource Include="Res\Sudoku\SudokuScheme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Res\Galattron\InitChar.png" />
+    <Resource Include="Res\Galattron\Sound.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\Galattron\LChar.png" />
+    <Resource Include="Res\Galattron\LEnemy.png" />
+    <Resource Include="Res\Galattron\RChar.png" />
+    <Resource Include="Res\Galattron\REnemy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

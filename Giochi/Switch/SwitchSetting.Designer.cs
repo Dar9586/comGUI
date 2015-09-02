@@ -197,7 +197,7 @@
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            
             this.Name = "SwitchSetting";
             this.Text = "SwitchSetting";
             this.ResumeLayout(false);
