@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace comGUI {
@@ -15,10 +12,8 @@ namespace comGUI {
         [STAThread]
         static void Main() {
             Application.EnableVisualStyles();
+          //  Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(start);
-          /*  Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(start);*/
         }
     }
 }

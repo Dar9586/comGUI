@@ -8,7 +8,7 @@
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">true if managed resources should be this.Disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing) {
             if (disposing && (components != null)) {
                 components.Dispose();
@@ -34,6 +34,8 @@
             // 
             // textBox1
             // 
+            this.textBox1.BackColor = System.Drawing.Color.Black;
+            this.textBox1.ForeColor = System.Drawing.Color.Cyan;
             this.textBox1.Location = new System.Drawing.Point(81, 34);
             this.textBox1.MaxLength = 19;
             this.textBox1.Name = "textBox1";
@@ -44,6 +46,8 @@
             // 
             // textBox2
             // 
+            this.textBox2.BackColor = System.Drawing.Color.Black;
+            this.textBox2.ForeColor = System.Drawing.Color.Cyan;
             this.textBox2.Location = new System.Drawing.Point(81, 100);
             this.textBox2.MaxLength = 19;
             this.textBox2.Name = "textBox2";
@@ -55,6 +59,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.Cyan;
             this.label1.Location = new System.Drawing.Point(93, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 13);
@@ -64,6 +70,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.Color.Cyan;
             this.label2.Location = new System.Drawing.Point(100, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 13);
@@ -72,17 +80,22 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Black;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Cyan;
             this.button1.Location = new System.Drawing.Point(103, 126);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.Cyan;
             this.label3.Location = new System.Drawing.Point(51, 173);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(34, 13);
@@ -93,6 +106,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Black;
+            this.label4.ForeColor = System.Drawing.Color.Cyan;
             this.label4.Location = new System.Drawing.Point(51, 207);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
@@ -102,6 +117,7 @@
             // 
             // MCD
             // 
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -110,6 +126,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            
             this.Name = "MCD";
             this.Text = "MCD e mcm";
             this.ResumeLayout(false);
