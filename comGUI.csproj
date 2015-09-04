@@ -56,10 +56,10 @@
   <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup>
-    <ManifestCertificateThumbprint>FA25607E79F9932B6D73AE86D529C94323B81E0A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>72DCA68757FE2B5F4448E411E659581D22733FD4</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>comGUI_ChiaveTemporanea.pfx</ManifestKeyFile>
+    <ManifestKeyFile>comGUI_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -165,10 +165,10 @@
     <Compile Include="Matematica\Notazione.Designer.cs">
       <DependentUpon>Notazione.cs</DependentUpon>
     </Compile>
-    <Compile Include="Minesweeper.cs">
+    <Compile Include="Giochi\Minesweeper.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Minesweeper.Designer.cs">
+    <Compile Include="Giochi\Minesweeper.Designer.cs">
       <DependentUpon>Minesweeper.cs</DependentUpon>
     </Compile>
     <Compile Include="Password\Password.cs">
@@ -301,7 +301,7 @@
     <EmbeddedResource Include="Matematica\Notazione.resx">
       <DependentUpon>Notazione.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Minesweeper.resx">
+    <EmbeddedResource Include="Giochi\Minesweeper.resx">
       <DependentUpon>Minesweeper.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Password\Password.resx">
@@ -342,6 +342,8 @@
     <EmbeddedResource Include="Giochi\Tris.resx">
       <DependentUpon>Tris.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="comGUI_1_TemporaryKey.pfx" />
+    <None Include="comGUI_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
