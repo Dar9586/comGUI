@@ -145,5 +145,23 @@ namespace comGUI {
             s.Show();
             this.Hide();
         }
+
+        private void button22_Click(object sender, EventArgs e) {
+            test1 s=new test1();
+            s.Show();
+            this.Hide();
+        }
+
+        private void button23_Click(object sender, EventArgs e) {
+            Ruffini s=new Ruffini();
+            s.Show();
+            this.Hide();
+        }
+
+        private void button24_Click(object sender, EventArgs e) {
+            BattagliaSetting s=new BattagliaSetting();
+            s.Show();
+            this.Hide();
+        }
     }
 }

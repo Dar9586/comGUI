@@ -56,10 +56,10 @@
   <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup>
-    <ManifestCertificateThumbprint>FA25607E79F9932B6D73AE86D529C94323B81E0A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>BCB742F912F5F7A6EC53CD30F7E3D2A11D59CDD0</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>comGUI_ChiaveTemporanea.pfx</ManifestKeyFile>
+    <ManifestKeyFile>comGUI_3_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -92,6 +92,18 @@
     </Compile>
     <Compile Include="Anagrammi.Designer.cs">
       <DependentUpon>Anagrammi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Battaglia\BattagliaSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Battaglia\BattagliaSetting.Designer.cs">
+      <DependentUpon>BattagliaSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Battaglia\Battaglia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Battaglia\Battaglia.Designer.cs">
+      <DependentUpon>Battaglia.cs</DependentUpon>
     </Compile>
     <Compile Include="Giochi\Galattron.cs">
       <SubType>Form</SubType>
@@ -165,10 +177,10 @@
     <Compile Include="Matematica\Notazione.Designer.cs">
       <DependentUpon>Notazione.cs</DependentUpon>
     </Compile>
-    <Compile Include="Minesweeper.cs">
+    <Compile Include="Giochi\Minesweeper.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Minesweeper.Designer.cs">
+    <Compile Include="Giochi\Minesweeper.Designer.cs">
       <DependentUpon>Minesweeper.cs</DependentUpon>
     </Compile>
     <Compile Include="Password\Password.cs">
@@ -238,6 +250,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Matematica\Ruffini.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Matematica\Ruffini.Designer.cs">
+      <DependentUpon>Ruffini.cs</DependentUpon>
+    </Compile>
     <Compile Include="Test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,8 +274,20 @@
     <Compile Include="Giochi\Tris.Designer.cs">
       <DependentUpon>Tris.cs</DependentUpon>
     </Compile>
+    <Compile Include="test1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="test1.Designer.cs">
+      <DependentUpon>test1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Anagrammi.resx">
       <DependentUpon>Anagrammi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Battaglia\Battaglia.resx">
+      <DependentUpon>Battaglia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Battaglia\BattagliaSetting.resx">
+      <DependentUpon>BattagliaSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Giochi\Galattron.resx">
       <DependentUpon>Galattron.cs</DependentUpon>
@@ -301,7 +331,7 @@
     <EmbeddedResource Include="Matematica\Notazione.resx">
       <DependentUpon>Notazione.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Minesweeper.resx">
+    <EmbeddedResource Include="Giochi\Minesweeper.resx">
       <DependentUpon>Minesweeper.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Password\Password.resx">
@@ -333,6 +363,9 @@
     <EmbeddedResource Include="Giochi\Switch\SwitchSetting.resx">
       <DependentUpon>SwitchSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Matematica\Ruffini.resx">
+      <DependentUpon>Ruffini.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,6 +375,13 @@
     <EmbeddedResource Include="Giochi\Tris.resx">
       <DependentUpon>Tris.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="test1.resx">
+      <DependentUpon>test1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="comGUI_1_TemporaryKey.pfx" />
+    <None Include="comGUI_2_TemporaryKey.pfx" />
+    <None Include="comGUI_3_TemporaryKey.pfx" />
+    <None Include="comGUI_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

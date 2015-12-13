@@ -49,16 +49,8 @@ namespace comGUI {
 }
         Rectangle r;
         private void timer1_Tick(object sender, EventArgs e) {
-            g.Clear(Color.Gray);
-            List<Point> s=new List<Point>();
-            s.Add(new Point(40,40));
-            s.Add(new Point(60,40));
-            s.Add(new Point(50,20));
-            g.DrawPolygon(Pens.Red,s.ToArray());
-            g.FillPolygon(new SolidBrush(Color.Black),s.ToArray());
-            pictureBox1.Image=b;
-            Debug.WriteLine(b.GetPixel(150,150).ToString());
-    Debug.WriteLine(new Point(x,y).ToString()+"\n\n");
+                       SendKeys.Send("Call me Ishmael. Some years ago- never mind how long precisely- having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world. It is a way I have of driving off the spleen and regulating the circulation. Whenever I find myself");
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e) {
@@ -71,6 +63,11 @@ namespace comGUI {
             rnd.GetBytes(buffer);
             textBox1.Text=buffer[0].ToString();*/
             textBox1.Text=rnd1.Next(50).ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e) {
+            
+           timer1.Enabled=!timer1.Enabled;
         }
 
         private void Test_Load(object sender, EventArgs e) {
