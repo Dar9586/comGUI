@@ -3,7 +3,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -22,7 +22,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+         void InitializeComponent() {
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -358,26 +358,26 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
+         System.Windows.Forms.TextBox textBox1;
+         System.Windows.Forms.Button button1;
+         System.Windows.Forms.Button button2;
+         System.Windows.Forms.Button button3;
+         System.Windows.Forms.Button button4;
+         System.Windows.Forms.Button button5;
+         System.Windows.Forms.Button button6;
+         System.Windows.Forms.Button button7;
+         System.Windows.Forms.Button button8;
+         System.Windows.Forms.Button button9;
+         System.Windows.Forms.Button button10;
+         System.Windows.Forms.Button button11;
+         System.Windows.Forms.Button button12;
+         System.Windows.Forms.Button button13;
+         System.Windows.Forms.Button button14;
+         System.Windows.Forms.Button button15;
+         System.Windows.Forms.Button button16;
+         System.Windows.Forms.Button button17;
+         System.Windows.Forms.Button button18;
+         System.Windows.Forms.Button button19;
+         System.Windows.Forms.Button button20;
     }
 }

@@ -8,7 +8,7 @@ namespace comGUI {
             InitializeComponent();
         this.FormClosing += back;
         }
-        private void textBox1_TextChanged(object sender, EventArgs e) {
+         void textBox1_TextChanged(object sender, EventArgs e) {
             bool ok=true;
             bool used=false;
             List<char> zer=new List<char>();
@@ -77,13 +77,13 @@ namespace comGUI {
             if(ok) {olds=textBox1.Text; }else {textBox1.Text=olds; }
             if(textBox1.Text=="") {label1.Text=""; }
         }
-        private void back(object sender, EventArgs e) {
+         void back(object sender, EventArgs e) {
             if(Program.start.Visible==false) { 
             Program.start.Show();}
             else { 
                  Dispose();
                }
         }
-        private string olds="";
+         string olds="";
     }
 }

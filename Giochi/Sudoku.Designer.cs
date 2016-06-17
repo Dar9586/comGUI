@@ -3,7 +3,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -22,7 +22,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+         void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -274,21 +274,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button checkBox1;
-        private System.Windows.Forms.Button checkBox2;
-        private System.Windows.Forms.Button checkBox3;
-        private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Timer timer3;
-        private System.Windows.Forms.Label label4;
+         System.Windows.Forms.Label label1;
+         System.Windows.Forms.RadioButton radioButton1;
+         System.Windows.Forms.RadioButton radioButton2;
+         System.Windows.Forms.RadioButton radioButton3;
+         System.Windows.Forms.Button button1;
+         System.Windows.Forms.Label label2;
+         System.Windows.Forms.RadioButton radioButton4;
+         System.Windows.Forms.NumericUpDown numericUpDown1;
+         System.Windows.Forms.Timer timer1;
+         System.Windows.Forms.Button checkBox1;
+         System.Windows.Forms.Button checkBox2;
+         System.Windows.Forms.Button checkBox3;
+         System.Windows.Forms.Timer timer2;
+         System.Windows.Forms.Label label3;
+         System.Windows.Forms.Timer timer3;
+         System.Windows.Forms.Label label4;
     }
 }

@@ -13,17 +13,17 @@ namespace comGUI {
         this.FormClosing += back;
         }
 
-        private void back(object sender, EventArgs e) {
+         void back(object sender, EventArgs e) {
             if(Program.start.Visible==false) { 
             Program.start.Show();}
             else { 
                  Dispose();
                }
         }
-
-        private static List<int> create()
+        Random rnd=new Random(Environment.TickCount);
+         static List<int> create()
 		{
-			Random rnd = new Random();
+			Random rnd = new Random(Environment.TickCount);
 			int k = 0;
 			List<int> list = new List<int>();
 			list.Add(0);
@@ -132,7 +132,7 @@ namespace comGUI {
 			return list;
 		}
 
-        private void createButton(int x,int y) {
+         void createButton(int x,int y) {
             Button s=new Button();
             s.Location = new Point(x, y);
             s.Size = new Size(24, 24);
@@ -150,11 +150,11 @@ namespace comGUI {
             
         }
 
-        private void mouseLeave(object sender, EventArgs e) {
+         void mouseLeave(object sender, EventArgs e) {
            try { if(!timer1.Enabled) { for(int a=0;a<81;a++) {list[a].ForeColor=col[a]; }}}catch(Exception) { }
         }
 
-        private void mouseHover(object sender, EventArgs e) {
+         void mouseHover(object sender, EventArgs e) {
             if(label2.Text!="Generazione in Corso..."&&!timer1.Enabled) { 
             int j=list.IndexOf((sender as Button));
              for(int a=0;a<81;a++) {
@@ -182,7 +182,7 @@ namespace comGUI {
                  }   
         }
 
-        private void buttonMouseclick(object sender, MouseEventArgs e) {
+         void buttonMouseclick(object sender, MouseEventArgs e) {
             int sen=list.IndexOf((sender as Button));
            if(col[sen]!=Color.Violet) { 
             if(e.Button.ToString()=="Right") {
@@ -194,12 +194,12 @@ namespace comGUI {
             }
         }
         
-        private void buttonClick(object sender, EventArgs e) {
+         void buttonClick(object sender, EventArgs e) {
             if (col[list.IndexOf((sender as Button))]!=Color.Violet) {
                 selected =list.IndexOf((sender as Button));}
         }
         List<string> schemed=new List<string>(Properties.Resources.SudokuScheme.ToString().Split('\n'));
-        private async void Sudoku_Load(object sender, EventArgs e) {
+         async void Sudoku_Load(object sender, EventArgs e) {
             generate2();
             List<int> s=new List<int> {12,42,72,112,142,172,212,242,272 };
             for(int b=0;b<81;b++) {
@@ -212,7 +212,7 @@ namespace comGUI {
             }
             s.Clear();
             await Task.Delay(500);
-           int gh=comGUI.Menu.rnd.Next(schemed.Count);
+           int gh=rnd.Next(schemed.Count);
             string c=schemed[gh];
             
             List<int>h=new List<int>();
@@ -237,7 +237,7 @@ namespace comGUI {
             33,34,35,42,43,44,51,52,53,54,55,56,63,64,65,72,73,
             74,57,58,59,66,67,68,75,76,77,60,61,62,69,70,71,78,79,80 };
 
-        private void bw_DoWork(object sender, DoWorkEventArgs e)
+         void bw_DoWork(object sender, DoWorkEventArgs e)
         {
             while(true) { 
             List<int> o=new List<int>(create());
@@ -247,7 +247,7 @@ namespace comGUI {
                 }
         }
         List<string> created=new List<string>();
-        private void radioButton1_CheckedChanged(object sender, EventArgs e) {
+         void radioButton1_CheckedChanged(object sender, EventArgs e) {
             radioButton1.Checked=true;
             radioButton2.Checked=false;
             radioButton3.Checked=false;
@@ -256,7 +256,7 @@ namespace comGUI {
 
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e) {
+         void radioButton2_CheckedChanged(object sender, EventArgs e) {
             radioButton1.Checked=false;
             radioButton2.Checked=true;
             radioButton3.Checked=false;
@@ -265,7 +265,7 @@ namespace comGUI {
 
         }
 
-        private void radioButton3_CheckedChanged(object sender, EventArgs e) {
+         void radioButton3_CheckedChanged(object sender, EventArgs e) {
             radioButton1.Checked=false;
             radioButton2.Checked=false;
             radioButton3.Checked=true;
@@ -273,7 +273,7 @@ namespace comGUI {
             numericUpDown1.Visible=false;
         }
 
-        private void radioButton4_CheckedChanged(object sender, EventArgs e) {
+         void radioButton4_CheckedChanged(object sender, EventArgs e) {
             radioButton1.Checked=false;
             radioButton2.Checked=false;
             radioButton3.Checked=false;
@@ -281,7 +281,7 @@ namespace comGUI {
             numericUpDown1.Visible=true;
         }
         
-        private async void button1_Click(object sender, EventArgs e) {
+         async void button1_Click(object sender, EventArgs e) {
             
                 if(button1.Text=="Reset") {
                 label4.Visible=false;
@@ -303,14 +303,14 @@ namespace comGUI {
                 label2.ForeColor=Color.Cyan;
             await Task.Delay(500);
             if(created.Count<1){
-                 int gh=comGUI.Menu.rnd.Next(schemed.Count);
+                 int gh=rnd.Next(schemed.Count);
             string c=schemed[gh];
             
             List<int>h=new List<int>();
                     for(int a=0;a<81;a++) {h.Add(int.Parse(c.ToCharArray()[adapter[a]].ToString())); }
                     scheme=h; }
             else {
-                    int k=comGUI.Menu.rnd.Next(created.Count);
+                    int k=rnd.Next(created.Count);
                     List<int>h=new List<int>();
                     for(int a=0;a<81;a++) {h.Add(int.Parse(created[k].ToCharArray()[a].ToString())); }
                     scheme=h;
@@ -323,9 +323,9 @@ namespace comGUI {
               
             else if(button1.Text=="Inizia") { 
             int j=0;
-            if(radioButton3.Checked) {j=comGUI.Menu.rnd.Next(15,25); }
-            else if(radioButton2.Checked) {j=comGUI.Menu.rnd.Next(25,35); }
-            else if(radioButton1.Checked) {j=comGUI.Menu.rnd.Next(35,45); }
+            if(radioButton3.Checked) {j=rnd.Next(15,25); }
+            else if(radioButton2.Checked) {j=rnd.Next(25,35); }
+            else if(radioButton1.Checked) {j=rnd.Next(35,45); }
             else if(radioButton4.Checked) {j=(int)numericUpDown1.Value;}
             
             if(j!=-1) {
@@ -338,7 +338,7 @@ namespace comGUI {
                 numericUpDown1.Visible=false;
                 button1.Visible=false;
                 for(int a=0;a<j;a++) {
-                    int h=comGUI.Menu.rnd.Next(81);
+                    int h=rnd.Next(81);
                     string h1=scheme[h].ToString();
                     if(list[h].Text=="") { 
                     list[h].Text=h1;
@@ -376,12 +376,10 @@ namespace comGUI {
             return true;
         }
         
-        private void win(bool end) {
+         void win(bool end) {
             timer3.Stop();
             se[se.Count-1].Visible=false;
             for(int a=0;a<81;a++) {list[a].ForeColor=Color.Violet;col[a]=Color.Violet;list[a].Text=scheme[a].ToString();user[a]=scheme[a];}
-            
-            winn=true;
             radioButton1.Checked=true;
             radioButton2.Checked=false;
             radioButton3.Checked=false;
@@ -397,7 +395,7 @@ namespace comGUI {
             button1.Text="Reset";
         }
         
-        private void generate2() {
+         void generate2() {
             List<int> i=new List<int> { 403,433,463};
             List<int> ii=new List<int> {100,130,160};
             for(int a=0;a<3;a++) {for(int b=0;b<3;b++) {Button x= createButton2(i[b],ii[a]);x.Text=(3*a+b+1).ToString();se.Add(x); } }
@@ -407,7 +405,7 @@ namespace comGUI {
             x2.Text="Resa";x2.ForeColor=Color.Red;se.Add(x2);
         }
 
-        private Button createButton2(int x,int y) {
+         Button createButton2(int x,int y) {
             Button s=new Button();
             s.Location = new Point(x, y);
             s.Size = new Size(24, 24);
@@ -422,14 +420,14 @@ namespace comGUI {
             return s;
         }
 
-        private void buttonClick2(object sender, EventArgs e) {
+         void buttonClick2(object sender, EventArgs e) {
             Button x=(sender as Button);
             if(x.Text=="Fine") {for(int a=0;a<81;a++) {timer1.Stop(); list[a].ForeColor=col[a]; }label3.Text=""; }
             else if(x.Text=="Resa") {for(int a=0;a<81;a++) {list[a].ForeColor=Color.Violet;col[a]=Color.Violet;list[a].Text=scheme[a].ToString(); }win(false); }
             else {tim=int.Parse(x.Text);timer1.Start(); }
         }
 
-        private void timer1_Tick(object sender, EventArgs e) {
+         void timer1_Tick(object sender, EventArgs e) {
             List<int>col1=new List<int>();
             for(int a=0;a<81;a++) {
                     list[a].ForeColor=Color.Cyan; 
@@ -481,25 +479,25 @@ namespace comGUI {
             label3.Text="Usati "+g+" su 9";
         }
 
-        private void timer2_Tick(object sender, EventArgs e) {
+         void timer2_Tick(object sender, EventArgs e) {
             if(label2.Visible&&label2.Text=="Generazione in Corso...") {checkBox1.Visible=false;checkBox2.Visible=false;checkBox3.Visible=false; }
             else {checkBox1.Visible=true;checkBox2.Visible=true;checkBox3.Visible=true; }
             label3.Visible=!radioButton1.Visible;
         }
 
-        private void checkBox1_Click(object sender, EventArgs e) {
+         void checkBox1_Click(object sender, EventArgs e) {
             checkBox1.ForeColor=checkBox1.ForeColor==Color.Lime?Color.Red:Color.Lime;
         }
 
-        private void checkBox2_Click(object sender, EventArgs e) {
+         void checkBox2_Click(object sender, EventArgs e) {
         checkBox2.ForeColor=checkBox2.ForeColor==Color.Lime?Color.Red:Color.Lime;
         }
 
-        private void checkBox3_Click(object sender, EventArgs e) {
+         void checkBox3_Click(object sender, EventArgs e) {
         checkBox3.ForeColor=checkBox3.ForeColor==Color.Lime?Color.Red:Color.Lime;
         }
 
-        private void timer3_Tick(object sender, EventArgs e) {
+         void timer3_Tick(object sender, EventArgs e) {
             if(time<5999) {time+=1; }
             string s="";
             s+=(time/60)<10? "0"+((int)(time/60)).ToString():((int)(time/60)).ToString();
@@ -509,7 +507,6 @@ namespace comGUI {
         }
 
         int selected=-1,time=0,keyd=0,tim=0;
-        bool winn=false;
         List<Button> list=new List<Button>(),se=new List<Button>();
         List<int> scheme=new List<int>(),user=new List<int>();
         List<Color> col=new List<Color>();

@@ -9,10 +9,10 @@ namespace comGUI {
             InitializeComponent();
         this.FormClosing += back;
         }
-        private void back(object sender, EventArgs e) {
+         void back(object sender, EventArgs e) {
             main.Show(); main.swimen.Dispose();Dispose();
         }
-        private void create(int x,int y,int te) {
+         void create(int x,int y,int te) {
             Button s=new Button();
             s.Location = new Point(x, y);
             s.Size = new Size(24, 24);
@@ -25,7 +25,8 @@ namespace comGUI {
             Controls.Add(s);
             list.Add(s);
         }
-        private void buttonClick(object sender, EventArgs e) {
+        Random rnd=new Random(Environment.TickCount);
+         void buttonClick(object sender, EventArgs e) {
             if(re) {
             if(!main.swimen.timer1.Enabled) {main.swimen.timer1.Start(); }
           int j=list.IndexOf((sender as Button));
@@ -54,10 +55,10 @@ namespace comGUI {
         }
         public void createscheme(int k) {
             
-            for(int a=0;a<99999;a++) {comGUI.Menu.rnd.Next(1944465); }   
+            for(int a=0;a<99999;a++) {rnd.Next(1944465); }   
             int x=5,y=2;
             for(int b=0;b<main.a;b++) {for(int a=0;a<main.b;a++) {
-                    create(x,y,comGUI.Menu.rnd.Next(2));
+                    create(x,y,rnd.Next(2));
                     x+=26;
                 }
             x=5;y+=26;

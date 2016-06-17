@@ -8,16 +8,17 @@ namespace comGUI {
  public Tiles() {
             InitializeComponent();
          this.FormClosing += back;
-            for(int a=0;a<99999;a++) {comGUI.Menu.rnd.Next(648974); }
+            for(int a=0;a<99999;a++) {rnd.Next(648974); }
         }
- private void back(object sender, EventArgs e) {
+  void back(object sender, EventArgs e) {
             if (Program.start.Visible==false) { 
             Program.start.Show();}
             else { 
                  Dispose();
                }
         }
- private static string where(int num)
+        Random rnd=new Random(Environment.TickCount);
+  static string where(int num)
 		{
 			if (num == 0){return "09,15";}
 			else if (num == 1){return "10,14,16";}
@@ -70,7 +71,7 @@ namespace comGUI {
 			else if (num == 48){return "33,39";}
 			else{return "";}
 		}
- private void canUse(int num) {
+  void canUse(int num) {
              string str=where(num);
             string[] st=str.Split(',');
             List<int> s=new List<int>();
@@ -81,14 +82,14 @@ namespace comGUI {
                 else {list[s[a]].ForeColor=Color.Blue;list[s[a]].Enabled=true; }
             }
         }
- private void lose() {
+  void lose() {
              for(int a=0;a<49;a++) {list[a].ForeColor=Color.Red;}
             timer1.Stop();
             start.Visible=true;
             start.Text="Rincomincia";
             label3.ForeColor=Color.Red;label3.Text="Hai Perso!";  
         }
- private void win() {
+  void win() {
             for(int a=0;a<49;a++) {list[a].ForeColor=Color.Green;}
             timer1.Stop();
             start.Visible=true;
@@ -96,9 +97,9 @@ namespace comGUI {
             label3.ForeColor=Color.Green;label3.Text="Hai Vinto!";  
         }
 
- private void button_Click(object sender, EventArgs e) {button(list.IndexOf(sender as Button));}
+  void button_Click(object sender, EventArgs e) {button(list.IndexOf(sender as Button));}
  
- private void timer1_Tick(object sender, EventArgs e) {   time++;
+  void timer1_Tick(object sender, EventArgs e) {   time++;
             int m=(int) time/60;
             int s=time%60;
             string t="";
@@ -109,7 +110,7 @@ namespace comGUI {
             t+=s.ToString();
             label1.Text=t;
         }
- private void button(int button) {
+  void button(int button) {
             for(int a=0;a<49;a++) {list[a].Enabled=false; }
             poi++;
             if (poi<10) {list[button].Text="0"; }
@@ -120,7 +121,7 @@ namespace comGUI {
             for (int a=0;a<49;a++){if(list[a].Enabled==true){k=false;}}
             if (k){lose();}
         }
- private void start_Click(object sender, EventArgs e) {
+  void start_Click(object sender, EventArgs e) {
             label1.Text="00 : 00";
             label3.Text="";
             for(int a=0;a<49;a++){list[a].Text="";}
@@ -130,16 +131,16 @@ namespace comGUI {
             label2.Visible=true;
             timer1.Enabled=true;
             start.Visible=false;
-            int h=comGUI.Menu.rnd.Next(49);
+            int h=rnd.Next(49);
             list[h].Text="01";
            canUse(h);
         }
 
-        private List<Button> list=new List<Button>();
-        private int time=0;
-        private int poi=1;
+         List<Button> list=new List<Button>();
+         int time=0;
+         int poi=1;
 
-        private void createButton(int x,int y) {
+         void createButton(int x,int y) {
             Button s=new Button();
             s.Location = new Point(x, y);
             s.Size = new Size(30, 30);
@@ -153,7 +154,7 @@ namespace comGUI {
             
         }
 
-        private void Tiles_Load(object sender, EventArgs e) {
+         void Tiles_Load(object sender, EventArgs e) {
             int s=13;
             List<int> o=new List<int>();
             while(o.Count<7) {o.Add(s);s+=36; }

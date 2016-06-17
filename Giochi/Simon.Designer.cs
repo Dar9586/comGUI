@@ -3,7 +3,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -22,7 +22,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+         void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.cyan = new System.Windows.Forms.Button();
             this.yellow = new System.Windows.Forms.Button();
@@ -160,14 +160,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button cyan;
-        private System.Windows.Forms.Button yellow;
-        private System.Windows.Forms.Button green;
-        private System.Windows.Forms.Button red;
-        private System.Windows.Forms.Button start;
-        private System.Windows.Forms.Label point;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer col;
-        private System.Windows.Forms.Label label1;
+         System.Windows.Forms.Button cyan;
+         System.Windows.Forms.Button yellow;
+         System.Windows.Forms.Button green;
+         System.Windows.Forms.Button red;
+         System.Windows.Forms.Button start;
+         System.Windows.Forms.Label point;
+         System.Windows.Forms.Timer timer1;
+         System.Windows.Forms.Timer col;
+         System.Windows.Forms.Label label1;
     }
 }

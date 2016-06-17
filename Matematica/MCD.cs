@@ -4,34 +4,34 @@ using System.Windows.Forms;
 
 namespace comGUI {
     public partial class MCD : Form {
-        private string oldnum1="",oldnum2="";
+         string oldnum1="",oldnum2="";
         List<string>allow=new List<string> {"0","1","2","3","4","5","6","7","8","9"};
         public MCD() {
             InitializeComponent();
              this.FormClosing += back;
         }
-        private void back(object sender, EventArgs e) {
+         void back(object sender, EventArgs e) {
             if(Program.start.Visible==false) { 
             Program.start.Show();}
             else { 
                  Dispose();
                }
         }
-        private void textBox1_TextChanged(object sender, EventArgs e) {
+         void textBox1_TextChanged(object sender, EventArgs e) {
             bool ok=true;
             for(int a=0;a<textBox1.TextLength;a++) {
                 if(!allow.Contains(textBox1.Text.ToCharArray()[a].ToString())) {ok=false; }
             }      
             if(!ok) {textBox1.Text=oldnum1; }else {oldnum1=textBox1.Text; }                                          
         }
-        private void textBox2_TextChanged(object sender, EventArgs e) {
+         void textBox2_TextChanged(object sender, EventArgs e) {
              bool ok=true;
             for(int a=0;a<textBox2.TextLength;a++) {
                 if(!allow.Contains(textBox2.Text.ToCharArray()[a].ToString())) {ok=false; }
             }      
             if(!ok) {textBox2.Text=oldnum2;}else {oldnum2=textBox2.Text; }         
         }
-        private void button1_Click(object sender, EventArgs e) {
+         void button1_Click(object sender, EventArgs e) {
             label3.Visible=true;
             label4.Visible=true;
             try {

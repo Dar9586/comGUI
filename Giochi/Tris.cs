@@ -1,175 +1,155 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
-
 namespace comGUI {
     public partial class Tris : Form {
         public Tris() {
             InitializeComponent();
             this.FormClosing += back;
-            list.Add(button1);
-            list.Add(button2);
-            list.Add(button3);
-            list.Add(button6);
-            list.Add(button5);
-            list.Add(button4);
-            list.Add(button9);
-            list.Add(button8);
-            list.Add(button7);
         }
-        private void button1_Click(object sender, EventArgs e) {
-            button1.Enabled=false;
-            button1.Text=s;
-            if(select) {checkwin(list); }else {if(s=="X") { s="O";}else {s="X";}checkwin(list); }
-
-        }
-        private void button2_Click(object sender, EventArgs e) {
-            button2.Enabled=false;
-            button2.Text=s;
-             if(select) {checkwin(list); }else {if(s=="X") { s="O";}else {s="X";}checkwin(list); }
-        }
-        private void button3_Click(object sender, EventArgs e) {
-            button3.Enabled=false;
-            button3.Text=s;
-             if(select) {checkwin(list); }else {if(s=="X") { s="O";}else {s="X";}checkwin(list); }
-        }
-        private void button6_Click(object sender, EventArgs e) {
-            button6.Enabled=false;
-            button6.Text=s;
-            if(select) {checkwin(list); }else {if(s=="X") { s="O";}else {s="X";}checkwin(list); }
-        }
-        private void button5_Click(object sender, EventArgs e) {
-            button5.Enabled=false;
-            button5.Text=s;
-             if(select) {checkwin(list); }else {if(s=="X") { s="O";}else {s="X";}checkwin(list); }
-        }
-        private void button4_Click(object sender, EventArgs e) {
-            button4.Enabled=false;
-            button4.Text=s;
-            if(select) {checkwin(list); }else {if(s=="X") { s="O";}else {s="X";}checkwin(list); }
-        }
-        private void button9_Click(object sender, EventArgs e) {
-            button9.Enabled=false;
-            button9.Text=s;
-             if(select) {checkwin(list); }else {if(s=="X") { s="O";}else {s="X";}checkwin(list); }
-        }
-        private void button8_Click(object sender, EventArgs e) {
-            button8.Enabled=false;
-            button8.Text=s;
-             if(select) {checkwin(list); }else {if(s=="X") { s="O";}else {s="X";}checkwin(list); }
-        }
-        private void button7_Click(object sender, EventArgs e) {
-            button7.Enabled=false;
-            button7.Text=s;
-            if(select) {checkwin(list); }else {if(s=="X") { s="O";}else {s="X";}checkwin(list); }
-        }
-        private void button10_Click(object sender, EventArgs e) {
-            button11.Visible=false;
-            button10.Visible=false;
-            label1.Text="Giocatore";
-            label2.Text="Computer";
-            label3.Text="0";
-            label4.Text="0";
-            s="X";
-            select=true;
-            for(int a=0;a<9;a++) {list[a].Enabled=true; list[a].Text=" "; }
-        }
-        private void button11_Click(object sender, EventArgs e) {
-            button11.Visible=false;
-            button10.Visible=false;
-            label1.Text="Giocatore X";
-            label2.Text="Giocatore O";
-            label3.Text="0";
-            label4.Text="0";
-            for(int a=0;a<9999;a++) {rnd.Next(9784987); }
-            int o=rnd.Next(2);
-            if(o==1) {s="X" ;}else {s="0"; }
-            for(int a=0;a<9;a++) {list[a].Enabled=true;list[a].Text=" "; }
-        }
-        private void button12_Click(object sender, EventArgs e) {
-            for(int a=0;a<9;a++) {list[a].Enabled=true;list[a].Text=" "; }
-            button12.Visible=false;
-            label5.Text="";
-        }
-        private static string check(List<Button> list,string str){
-			string fin="";
-			for(int a=0;a<3;a++){
-				fin=fin+list[int.Parse(str.ToCharArray()[a].ToString())].Text;
-			}
-			return fin;
-		}
-        private void back(object sender, EventArgs e) {
+        void back(object sender, EventArgs e) {
             if(Program.start.Visible==false) { 
             Program.start.Show();}
             else { 
                  Dispose();
                }
         }
-        private void checkwin(List<Button> list) {
-                string draw="";
-                bool dra=true; 
-                for(int a=0;a<9;a++) {draw+=list[a].Text; if(list[a].Text==" ") {dra=false;} }
-				List<string> x=new List<string>{"630","741","852","012","345","678","642","840"};
-                for(int a=0;a<8;a++){
-					if (check(list,x[a])=="XXX") { win(1); return; }
-					else if (check(list,x[a])=="OOO") { win(2); return; }
-					else if (dra) { win(3); return;}
-				}
-				
-                if(select) {
-					List<string> x1=new List<string>{"012","021","120","345","453","354","678","876","867","630","603","036","741","417","714","852","285","258","642","624","246","840","408","804"};
-					List<int> x2=new List<int>{2,1,0,5,3,4,8,6,7,0,3,6,1,7,4,2,5,8,2,4,6,0,8,4};
-					bool used=true;
-					for(int a=0;a<x1.Count;a++){
-						if(check(list,x1[a])=="OO ") { list[x2[a]].Text = "O";list[x2[a]].Enabled=false; win(2);used=false; }
-				       else if(check(list,x1[a])=="XX ") { list[x2[a]].Text = "O";list[x2[a]].Enabled=false;used=false; }
-					}
-              
-				if(used){
-                    while (true){
-                      int k=rnd.Next(9);
-                    if(list[k].Text==" ") {
-                            list[k].Enabled=false;
-                            list[k].Text="O";
-                            break;
-                        }
-                    }
-                }
-				
-			
+         Random rnd=new Random(Environment.TickCount);
+         List<Button>but=new List<Button>();
+        private void Tris_Load(object sender, EventArgs e) {
+            data.Clear();but.Clear();
+            for(int a=0;a<3;a++) {
+                for(int b=0;b<3;b++) {createButton(13+b*66,13+a*66); }
             }
         }
-        private void win(int p) {
-            if(!select) { 
-            if(p==1) {
-                label3.Text=(int.Parse(label3.Text)+1).ToString();
-                label5.Text="Ha vinto il Giocatore X.";
+        void createButton(int x,int y){
+            Button x1=new Button();
+            x1.FlatStyle = FlatStyle.Flat;
+            x1.ForeColor = Color.Cyan;
+            x1.Location = new Point(x, y);
+            x1.Size = new Size(64, 64);
+            x1.UseVisualStyleBackColor = true;
+            x1.Click += button_Click;
+            x1.TabStop=false;
+            x1.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            x1.Text=" ";
+            x1.Visible=false;
+            Controls.Add(x1);but.Add(x1);}
+        List<int>data=new List<int>();
+        //0=modalità,1=turno(0=x,1=o),2=punti player,3=punti giocatore/computer,
+        private void button_Click(object sender, EventArgs e) {
+            int sen=but.IndexOf(sender as Button);
+            but[sen].Click -= button_Click;
+            but[sen].ForeColor=data[1]==0?Color.Green:Color.Red;
+            but[sen].Text=data[1]==0?"X":"O";
+            if(checkWin(true)!=0) {updatePoint();button3.Visible=true;for(int a=0;a<9;a++) {but[a].Click-=button_Click; }return; };
+            switch(data[0]) {
+                case 0:AI();if(checkWin(true)!=0) {updatePoint();button3.Visible=true;for(int a=0;a<9;a++) {but[a].Click-=button_Click; }return; };break;
+                case 1:data[1]=data[1]==0?1:0;break;
             }
-            if(p==2) {
-                label4.Text=(int.Parse(label4.Text)+1).ToString();
-                label5.Text="Ha vinto il Giocatore O.";
-            }
-            }
+        }
+        int chk(List<int>x,bool up,int s) {label3.Text=data[0]==0?"Hai Perso!":"Vince il giocatore 2";but[x[0]].ForeColor=Color.Coral;but[x[1]].ForeColor=Color.Coral;but[x[2]].ForeColor=Color.Coral;if(up)data[3]++;return s; }
+        private int checkWin(bool up) {
+            string str="";for(int a=0;a<9;a++) {str+=but[a].Text; }
+                 if(check(str,new List<int>{0,1,2},"OOO")) {return chk(new List<int>{0,1,2},up,1);}
+            else if(check(str,new List<int>{3,4,5},"OOO")) {return chk(new List<int>{3,4,5},up,1);}
+            else if(check(str,new List<int>{6,7,8},"OOO")) {return chk(new List<int>{6,7,8},up,1);}
+            else if(check(str,new List<int>{0,3,6},"OOO")) {return chk(new List<int>{0,3,6},up,1);}
+            else if(check(str,new List<int>{1,4,7},"OOO")) {return chk(new List<int>{1,4,7},up,1);}
+            else if(check(str,new List<int>{2,5,8},"OOO")) {return chk(new List<int>{2,5,8},up,1);}
+            else if(check(str,new List<int>{0,4,8},"OOO")) {return chk(new List<int>{0,4,8},up,1);}
+            else if(check(str,new List<int>{2,4,6},"OOO")) {return chk(new List<int>{2,4,6},up,1);}
+            else if(check(str,new List<int>{0,1,2},"XXX")) {return chk(new List<int>{0,1,2},up,2);}
+            else if(check(str,new List<int>{3,4,5},"XXX")) {return chk(new List<int>{3,4,5},up,2);}
+            else if(check(str,new List<int>{6,7,8},"XXX")) {return chk(new List<int>{6,7,8},up,2);}
+            else if(check(str,new List<int>{0,3,6},"XXX")) {return chk(new List<int>{0,3,6},up,2);}
+            else if(check(str,new List<int>{1,4,7},"XXX")) {return chk(new List<int>{1,4,7},up,2);}
+            else if(check(str,new List<int>{2,5,8},"XXX")) {return chk(new List<int>{2,5,8},up,2);}
+            else if(check(str,new List<int>{0,4,8},"XXX")) {return chk(new List<int>{0,4,8},up,2);}
+            else if(check(str,new List<int>{2,4,6},"XXX")) {return chk(new List<int>{2,4,6},up,2);}
             else {
-                 if(p==1) {
-                label3.Text=(int.Parse(label3.Text)+1).ToString();
-                label5.Text="Ha vinto il Giocatore.";
-            }
-            if(p==2) {
-                label4.Text=(int.Parse(label4.Text)+1).ToString();
-                label5.Text="Ha vinto il Computer.";
-            }
-            }
-            if(p==3) {
-                label5.Text="I due Giocatori hanno pareggiato.";
-            }
-            for(int a=0;a<9;a++) {list[a].Enabled=false; }
-            button12.Visible=true;
+             bool s=true; for(int a=0;a<9;a++){if(but[a].Text==" "){s=false;break;}}if(s){for(int a=0;a<9;a++) {but[a].ForeColor=Color.Coral; } label3.Text="Pareggio!";return 3;}
+            }return 0;
         }
-        
-        private List<Button> list=new List<Button> ();
-        private Random rnd=new Random();
-        private static string s="X"; 
-        private bool select=false;
+        void updatePoint() {
+            switch(checkWin(false)) {
+                case 1:label3.ForeColor=Color.Red;break;
+                case 2:label3.ForeColor=Color.Green;break;
+                case 3:label3.ForeColor=Color.Coral;break;
+            }
+            label1.Text=(data[0]==0?"Giocatore : ":"Giocatore 1 : ")+data[2].ToString();
+            label2.Text=(data[0]==0?"Computer  : ":"Giocatore 2 : ")+data[3].ToString();
+        }
+        private void button1_Click(object sender, EventArgs e) {
+            data=new List<int> {(sender as Button).TabIndex,rnd.Next(2),0,0 };
+            button1.Visible=false;button2.Visible=false;label1.Visible=true;label2.Visible=true;
+            updatePoint();
+            for(int a=0;a<9;a++) {but[a].Visible=true; }
+            if(data[0]==0&&data[1]==1) {AI();data[1]=0; }
+        }
+        bool check(string x,List<int> num,string comp) {
+            string y=x[num[0]].ToString()+x[num[1]].ToString()+x[num[2]].ToString();
+            return y==comp;}
+        void AIchk(int x) {but[x].Text="O";but[x].Click-=button_Click;but[x].ForeColor=Color.Red; }
+        private void AI( ) {
+            string str="";for(int a=0;a<9;a++) {str+=but[a].Text; }
+                 if(check(str,new List<int>{0,1,2},"OO ")) {AIchk(2);}
+            else if(check(str,new List<int>{0,1,2},"O O")) {AIchk(1);}
+            else if(check(str,new List<int>{0,1,2}," OO")) {AIchk(0);}
+            else if(check(str,new List<int>{3,4,5},"OO ")) {AIchk(5);}
+            else if(check(str,new List<int>{3,4,5},"O O")) {AIchk(4);}
+            else if(check(str,new List<int>{3,4,5}," OO")) {AIchk(3);}
+            else if(check(str,new List<int>{6,7,8},"OO ")) {AIchk(8);}
+            else if(check(str,new List<int>{6,7,8},"O O")) {AIchk(7);}
+            else if(check(str,new List<int>{6,7,8}," OO")) {AIchk(6);}
+            else if(check(str,new List<int>{0,3,6},"OO ")) {AIchk(6);}
+            else if(check(str,new List<int>{0,3,6},"O O")) {AIchk(3);}
+            else if(check(str,new List<int>{0,3,6}," OO")) {AIchk(0);}
+            else if(check(str,new List<int>{1,4,7},"OO ")) {AIchk(7);}
+            else if(check(str,new List<int>{1,4,7},"O O")) {AIchk(4);}
+            else if(check(str,new List<int>{1,4,7}," OO")) {AIchk(1);}
+            else if(check(str,new List<int>{2,5,8},"OO ")) {AIchk(8);}
+            else if(check(str,new List<int>{2,5,8},"O O")) {AIchk(5);}
+            else if(check(str,new List<int>{2,5,8}," OO")) {AIchk(2);}
+            else if(check(str,new List<int>{0,4,8},"OO ")) {AIchk(8);}
+            else if(check(str,new List<int>{0,4,8},"O O")) {AIchk(4);}
+            else if(check(str,new List<int>{0,4,8}," OO")) {AIchk(0);}
+            else if(check(str,new List<int>{2,4,6},"OO ")) {AIchk(6);}
+            else if(check(str,new List<int>{2,4,6},"O O")) {AIchk(4);}
+            else if(check(str,new List<int>{2,4,6}," OO")) {AIchk(2);}
+            else if(check(str,new List<int>{0,1,2},"XX ")) {AIchk(2);}
+            else if(check(str,new List<int>{0,1,2},"X X")) {AIchk(1);}
+            else if(check(str,new List<int>{0,1,2}," XX")) {AIchk(0);}
+            else if(check(str,new List<int>{3,4,5},"XX ")) {AIchk(5);}
+            else if(check(str,new List<int>{3,4,5},"X X")) {AIchk(4);}
+            else if(check(str,new List<int>{3,4,5}," XX")) {AIchk(3);}
+            else if(check(str,new List<int>{6,7,8},"XX ")) {AIchk(8);}
+            else if(check(str,new List<int>{6,7,8},"X X")) {AIchk(7);}
+            else if(check(str,new List<int>{6,7,8}," XX")) {AIchk(6);}
+            else if(check(str,new List<int>{0,3,6},"XX ")) {AIchk(6);}
+            else if(check(str,new List<int>{0,3,6},"X X")) {AIchk(3);}
+            else if(check(str,new List<int>{0,3,6}," XX")) {AIchk(0);}
+            else if(check(str,new List<int>{1,4,7},"XX ")) {AIchk(7);}
+            else if(check(str,new List<int>{1,4,7},"X X")) {AIchk(4);}
+            else if(check(str,new List<int>{1,4,7}," XX")) {AIchk(1);}
+            else if(check(str,new List<int>{2,5,8},"XX ")) {AIchk(8);}
+            else if(check(str,new List<int>{2,5,8},"X X")) {AIchk(5);}
+            else if(check(str,new List<int>{2,5,8}," XX")) {AIchk(2);}
+            else if(check(str,new List<int>{0,4,8},"XX ")) {AIchk(8);}
+            else if(check(str,new List<int>{0,4,8},"X X")) {AIchk(4);}
+            else if(check(str,new List<int>{0,4,8}," XX")) {AIchk(0);}
+            else if(check(str,new List<int>{2,4,6},"XX ")) {AIchk(6);}
+            else if(check(str,new List<int>{2,4,6},"X X")) {AIchk(4);}
+            else if(check(str,new List<int>{2,4,6}," XX")) {AIchk(2);}
+            else {int s=rnd.Next(9);while (but[s].Text!=" ") {s=rnd.Next(9); }AIchk(s);}
+        }
+        private void button3_Click(object sender, EventArgs e) {
+            button3.Visible=false;label3.ForeColor=Color.Black;
+            for(int a=0;a<9;a++) {Controls.Remove(but[a]);but[a].Dispose(); }
+            but.Clear(); for(int a=0;a<3;a++) {
+                for(int b=0;b<3;b++) {createButton(13+b*66,13+a*66);but[but.Count-1].Visible=true; }
+            }data[1]=rnd.Next(2);if(data[0]==0&&data[1]==1) {AI();data[1]=0; }
+        }
     }
 }

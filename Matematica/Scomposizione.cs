@@ -9,7 +9,7 @@ namespace comGUI {
             InitializeComponent();
         this.FormClosing += back;
         }
-        private void textBox1_TextChanged(object sender, EventArgs e) {
+         void textBox1_TextChanged(object sender, EventArgs e) {
             List<char> num=new List<char>("0123456789".ToCharArray());
             List<char> num2=new List<char>(textBox1.Text.ToCharArray());
             bool ok=true;
@@ -35,14 +35,14 @@ namespace comGUI {
             }
             else {textBox1.Text=olds; }
         }
-        private void back(object sender, EventArgs e) {
+         void back(object sender, EventArgs e) {
             if(Program.start.Visible==false) { 
             Program.start.Show();}
             else { 
                  Dispose();
                }
         }
-        private void scom(long num) {
+         void scom(long num) {
             int s=num.ToString().Length;
             label1.Text="";
             richTextBox1.Text="";
@@ -77,6 +77,6 @@ namespace comGUI {
 
         }
 
-        private string olds="";
+         string olds="";
     }
 }

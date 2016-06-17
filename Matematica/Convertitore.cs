@@ -8,9 +8,10 @@ namespace comGUI {
     public partial class Convertitore : Form {
         public Convertitore() {
             InitializeComponent();
-             this.FormClosing += back;
+             FormClosing += back;
         }
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e) {
+        //List<int>maxlen=new List<int>{0,0,63,40,32,28,25,23,21,20,19,19,18,18,17,17,16,16,16,15,15,15,15,14,14,14,14,14,14,13,13,13,13,13,13,13,13 };
+         void numericUpDown1_ValueChanged(object sender, EventArgs e) {
             int s=(int)numericUpDown1.Value;
             if(numericUpDown1.Value<min) {numericUpDown1.Value=min;}
             else if(numericUpDown1.Value>36) {numericUpDown1.Value=36; }
@@ -18,7 +19,7 @@ namespace comGUI {
              str=toOther(num);
             format();
         }
-        private void textBox1_TextChanged(object sender, EventArgs e) {
+         void textBox1_TextChanged(object sender, EventArgs e) {
             List<char>cha=new List<char>(textBox1.Text.ToCharArray());
             List<char> allo=new List<char>(" 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray());
             int max=2;
@@ -39,14 +40,14 @@ namespace comGUI {
             }
             else {textBox1.Text=old; }
         }
-        private void back(object sender, EventArgs e) {
+         void back(object sender, EventArgs e) {
             if(Program.start.Visible==false) { 
             Program.start.Show();}
             else { 
                  Dispose();
                }
         }
-        private static StringBuilder rev(string str1)
+         static StringBuilder rev(string str1)
 		{
             StringBuilder str=new StringBuilder();
             str.Append(str1);
@@ -56,7 +57,7 @@ namespace comGUI {
 			str.Append(array);
 			return str;
 		}
-        private long to10(string num,int bas ) {
+         long to10(string num,int bas ) {
             List<char> allo=new List<char>("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray());
              List<int> n=new List<int>();
             for(int a=0;a<num.Length;a++) {
@@ -65,7 +66,7 @@ namespace comGUI {
             long final=0;
             for(int a=0;a<n.Count;a++) { final+=n[a]*(long)Math.Pow(bas,n.Count-a-1); }
             return final;}
-        private List<string> toOther(long num) {
+         List<string> toOther(long num) {
             List<char> allo=new List<char>("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray());
             List<int> n=new List<int>();
             List<string> final=new List<string>();
@@ -86,7 +87,7 @@ namespace comGUI {
             if(final.Contains("Impossibile convertire.")) {final.Clear();for(int a=0;a<35;a++) {final.Add("Impossibile convertire.");} }
             return final;
         }
-        private void format() {
+         void format() {
             richTextBox1.Text="";
             for(int a=0;a<35;a++) {
                 richTextBox1.SelectionColor=Color.White;
@@ -100,10 +101,8 @@ namespace comGUI {
         richTextBox1.SelectionColor=richTextBox1.ForeColor;
             }
         }
-
-        private  List<string> str=new List<string>();
-        private string old="";
-        private int min=2;
-
+          List<string> str=new List<string>();
+         string old="";
+         int min=2;
     }
 }

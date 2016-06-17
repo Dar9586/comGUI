@@ -11,16 +11,16 @@ namespace comGUI {
             InitializeComponent();
         this.FormClosing += back;
         }
-        private void back(object sender, EventArgs e) {
+         void back(object sender, EventArgs e) {
             if(Program.start.Visible==false) { 
             Program.start.Show();}
             else { 
                  Dispose();
                }
         }
-        private Bitmap b;
-        private Graphics g;
-        private void Galattron_Load(object sender, EventArgs e) {
+         Bitmap b;
+         Graphics g;
+         void Galattron_Load(object sender, EventArgs e) {
             b=new Bitmap(484,461);
             g=Graphics.FromImage(b);
             g.Clear(Color.Black);
@@ -30,7 +30,7 @@ namespace comGUI {
             
         
 
-        private void start_Click(object sender, EventArgs e) {
+         void start_Click(object sender, EventArgs e) {
             listp.Clear();
             listw.Clear();
             g.Clear(Color.Black);
@@ -65,7 +65,7 @@ namespace comGUI {
     return true;
         }
         int poi=0;
-        private void timer1_Tick(object sender, EventArgs e) {
+         void timer1_Tick(object sender, EventArgs e) {
             g.Clear(Color.Black);
             g.FillRectangle(new SolidBrush(Color.DarkGreen),new Rectangle(0,215,492,100));
             for(int a=0;a<starp.Count;a++) {
@@ -94,7 +94,7 @@ namespace comGUI {
             pictureBox1.Image=b;
         }
 
-        private void lose() {
+         void lose() {
             timer1.Stop();
             star.Stop();
             timer2.Stop();
@@ -105,25 +105,26 @@ namespace comGUI {
         List<Point> listp=new List<Point>();
         List<bool> listw=new List<bool>();
 
-        private void pictureBox1_Click(object sender, EventArgs e) {
+         void pictureBox1_Click(object sender, EventArgs e) {
             Point mpos=MousePosition;
             Point wpos=Location;
             Point pos=new Point(mpos.X-wpos.X-20,mpos.Y-wpos.Y-43);
         }
         bool gene=true;
-        private void timer2_Tick(object sender, EventArgs e) {
+         void timer2_Tick(object sender, EventArgs e) {
             
             if(gene) { 
-                int j=comGUI.Menu.rnd.Next(3);
+                int j=rnd.Next(3);
             if(j==1) {listp.Add(new Point(10,200));listw.Add(true);gene=false;}
             else if(j==0) {listp.Add(new Point(482,200));listw.Add(false);gene=false; }
             }else {gene=true; }
             label1.Text="Punteggio : "+poi.ToString();
         }
+        Random rnd=new Random(Environment.TickCount);
         List<Point> starp=new List<Point>();
-        private void star_Tick(object sender, EventArgs e) {
+         void star_Tick(object sender, EventArgs e) {
             if(starp.Count<500) {
-                starp.Add(new Point(comGUI.Menu.rnd.Next(492),comGUI.Menu.rnd.Next(200)));
+                starp.Add(new Point(rnd.Next(492),rnd.Next(200)));
             }
         }
     }

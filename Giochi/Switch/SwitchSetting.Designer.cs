@@ -3,7 +3,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -22,7 +22,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+         void InitializeComponent() {
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -207,16 +207,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+         System.Windows.Forms.Label label4;
+         System.Windows.Forms.Label label3;
+         System.Windows.Forms.Label label2;
+         System.Windows.Forms.Label label1;
+         System.Windows.Forms.Button button1;
+         System.Windows.Forms.TextBox textBox2;
+         System.Windows.Forms.TextBox textBox1;
+         System.Windows.Forms.Label label5;
+         System.Windows.Forms.Label label6;
+         System.Windows.Forms.Label label7;
         public System.Windows.Forms.TextBox si1;
         public System.Windows.Forms.TextBox si2;
     }

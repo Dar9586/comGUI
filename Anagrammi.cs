@@ -15,7 +15,7 @@ namespace comGUI {
             InitializeComponent();
         this.FormClosing += back;
         }
-        private void back(object sender, EventArgs e) {
+         void back(object sender, EventArgs e) {
             if(Program.start.Visible==false) { 
             Program.start.Show();}
             else { 
@@ -25,12 +25,12 @@ namespace comGUI {
 
         List<char> ch=new List<char>();
         List<int> rip=new List<int>();
-        private int fact(int x) {
+         int fact(int x) {
             int l=1;
             for(int a=1;a<x+1;a++) {l*=a; }
             return l;
         }
-        private void met1() {
+         void met1() {
             List<char>s=new List<char>(textBox1.Text.ToCharArray());
             int pos=0;
             ch.Clear();rip.Clear();
@@ -48,16 +48,16 @@ namespace comGUI {
             while(true) {
                 List<char> i=new List<char>(textBox1.Text.ToCharArray());
                 string h="";
-                while(i.Count!=0) {int j=comGUI.Menu.rnd.Next(i.Count); h+=i[j];i.RemoveAt(j); }
+                while(i.Count!=0) {int j=rnd.Next(i.Count); h+=i[j];i.RemoveAt(j); }
                 if(!final.Contains(h)) {final.Add(h); }
                 if(final.Count==pos) {break; }
             }
                 final.Sort();
             for(int a=0;a<final.Count;a++) {richTextBox1.Text+=final[a];if(a+1<final.Count) { richTextBox1.Text+="\n";} }
         }
-
+        Random rnd=new Random(Environment.TickCount);
         List<string> final2=new List<string>();
-        private void comb(Tuple<List<char>, string> z) {
+         void comb(Tuple<List<char>, string> z) {
            List<char> x=z.Item1;
            string y=z.Item2;
             if (x.Count!=0){ 
@@ -72,7 +72,7 @@ namespace comGUI {
             else {if(!final2.Contains(y)){ final2.Add(y);richTextBox1.Text+="\n"+y;} }
         }
 
-        private async void met2() {
+         async void met2() {
             final2.Clear();
             List<char>start2=new List<char>(textBox1.Text.ToCharArray());
             List<char>start=new List<char>();
@@ -96,12 +96,12 @@ namespace comGUI {
         }
 
 
-        private void textBox1_TextChanged(object sender, EventArgs e) {
+         void textBox1_TextChanged(object sender, EventArgs e) {
             if(textBox1.Text.Length>6) {label2.Visible=true;label1.Visible=true; }
             else{label2.Visible=false;label1.Visible=false; }
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+         void button1_Click(object sender, EventArgs e) {
             if(textBox1.Text.Length>0&&button1.Text=="Genera") { 
                 richTextBox1.Text="";
               //  met1();

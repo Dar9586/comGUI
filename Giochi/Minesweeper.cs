@@ -1,285 +1,224 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace comGUI {
-    public partial class Minesweeper : Form {
-        public Minesweeper() {
+
+    public partial class MineSweeper : Form {
+
+        public MineSweeper() {
             InitializeComponent();
-        this.FormClosing += back;
-        }
-        private void back(object sender, EventArgs e) {
-            if(Program.start.Visible==false) { 
-            Program.start.Show();}
-            else { 
-                 Dispose();
-               }
-        }
-        Bitmap b;
-        Graphics g;
-        private void Minesweeper_Load(object sender, EventArgs e) {
-          
+            this.FormClosing += back;
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e) {
-            numericUpDown3.Maximum=numericUpDown1.Value*numericUpDown2.Value-5;
-        }
-
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e) {
-            numericUpDown3.Maximum=numericUpDown1.Value*numericUpDown2.Value-5;
-        }
-
-        private void drawScheme() {
-            int a=0;
-            while(a<35) {
-                int b=a*16;
-                g.DrawLine(new Pen(Color.Cyan,1),new Point(b,0),new Point(b,480));
-                g.DrawLine(new Pen(Color.Cyan,1),new Point(0,b),new Point(480,b));
-                a++;
+         void back(object sender, EventArgs e) {
+            time = 0;
+            if (Program.start.Visible == false) {
+                Program.start.Show();
+            }
+            else {
+                Dispose();
             }
         }
-        List<int>list=new List<int>();
-        private void Inizia_Click(object sender, EventArgs e) {
-            if(numericUpDown3.Value<=numericUpDown3.Maximum) { 
-                list.Clear();
-                time=0;
-                can=true;
-                label5.Text="00 : 00";
-                used.Clear();
-                for(int a=0;a<numericUpDown1.Value*numericUpDown2.Value;a++) {list.Add(0);used.Add(true); }
-                for(int a=0;a<numericUpDown3.Value;a++) {
-                    int j=comGUI.Menu.rnd.Next(list.Count);
-                    if(list[j]==0) {list[j]=9; }else {a--; }
-                }
-                control();
-                generate();
-            Size z=new Size((int)(16*numericUpDown1.Value+1),(int)(16*numericUpDown2.Value+1));
-            b=new Bitmap(z.Width,z.Height);
-            g=Graphics.FromImage(b);
-            g.Clear(Color.Black);
-                pictureBox1.Size=z;
-                this.Size=new Size(z.Width+50,z.Height+150);
-                drawScheme();
-                layout(false);
-                label4.Location=reset.Location=new Point(30,pictureBox1.Size.Height+20);
-                reset.Location=new Point(25,pictureBox1.Size.Height+40);
-                reset.Size=new Size(pictureBox1.Size.Width,23);
-                label5.Location=new Point(25,pictureBox1.Size.Height+65);
-            pictureBox1.Image=b;
-                }
-            else {numericUpDown3.Value=numericUpDown3.Maximum; }
-        }
-         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-    {
-    if (keyData == Keys.Left )
-    { 
-           Cursor.Position=new Point(MousePosition.X-1,MousePosition.Y);     
-    }
-    if (keyData == Keys.Right) { 
-           Cursor.Position=new Point(MousePosition.X+1,MousePosition.Y);     
-    }
-    if (keyData == Keys.Up){ 
-           Cursor.Position=new Point(MousePosition.X,MousePosition.Y-1);     
-    }
-    if (keyData == Keys.Down){ 
-           Cursor.Position=new Point(MousePosition.X,MousePosition.Y+1);     
-    }
-    return true;
-        }
-        private void pictureBox1_Click(object sender, EventArgs e) {
-            
+
+         void createButton(int x, int y, int z) {
+            Button s = new Button();
+            s.Location = new Point(x, y);
+            s.Size = new Size(24, 24);
+            s.BackColor = Color.Black;
+            s.ForeColor = Color.Cyan;
+            s.FlatStyle = FlatStyle.Flat;
+            s.UseVisualStyleBackColor = true;
+            s.TabIndex = z;
+            s.MouseUp += new MouseEventHandler(mouseClick);
+            Controls.Add(s);
+            user.Add(s);
         }
 
-        private void layout(bool x) {
-            numericUpDown1.Visible=x;
-            numericUpDown2.Visible=x;
-            numericUpDown3.Visible=x;
-            label1.Visible=x;
-            label2.Visible=x;
-            label3.Visible=x;
-            start.Visible=x;
-            pictureBox1.Visible=!x;
-            reset.Visible=!x;
+         void mouseClick(object sender, MouseEventArgs e) {
+            int pos = user.IndexOf((sender as Button));
+            if (e.Button.ToString() == "Right") {
+                if (user[pos].ForeColor == Color.Cyan) { user[pos].ForeColor = Color.Yellow; user[pos].Text = "?"; }
+                else if (user[pos].ForeColor == Color.Yellow) { user[pos].ForeColor = Color.Red; user[pos].Text = "⚠"; }
+                else if (user[pos].ForeColor == Color.Red) { user[pos].ForeColor = Color.Cyan; user[pos].Text = ""; }
+            }
+            if (e.Button.ToString() == "Left") {
+                if (scheme.Count == 0) {
+                    scheme = Enumerable.Repeat(0, (int)(numericUpDown1.Value * numericUpDown2.Value)).ToList();
+                    generateScheme(pos);
+                }
+                updateUser(pos);
+                int howLeft = 0;
+                for (int a = 0; a < scheme.Count; a++) { if (user[a].Text == "") { howLeft++; } if (user[a].Text == "☠") { label4.Visible = true; label4.Text = "Hai Perso"; label4.ForeColor = Color.Red; seeall(); howLeft = 0; extra[0].Visible = false; timer1.Stop(); break; } }
+                if (howLeft == numericUpDown3.Value) { label4.Visible = true; label4.Text = "Hai Vinto"; label4.ForeColor = Color.Green; extra[0].Visible = false; timer1.Stop(); seeall(); }
+            }
         }
-        int red=0,yellow=0;
-        private void control() {
-            for(int a=0;a<list.Count;a++) {
-                if(list[a]==9) {
-                    int h=(int)numericUpDown1.Value;
-                    int y=a-(h+1);
-                 if(y>=0) {
-                        if(list[y]!=9&&(y+1)%h!=0) {list[y]=list[y]+1; }
-                        y++;
-                        if(list[y]!=9) {list[y]=list[y]+1; }
-                        y++;
-                        if(list[y]!=9&&y%h!=0) {list[y]=list[y]+1; }
-                    }
-                 y=a-1;
-                if(y>=0&&list[y]!=9&&(y+1)%h!=0) {list[y]=list[y]+1; }
-                y+=2;
-                if(y<list.Count&&list[y]!=9&&y%h!=0) {list[y]=list[y]+1; }
-                y=a+h+1;
-                    if(y<list.Count) {
-                         if(list[y]!=9&&y%h!=0) {list[y]=list[y]+1; }
-                        y--;
-                        if(list[y]!=9) {list[y]=list[y]+1; }
-                        y--;
-                       if(list[y]!=9&&(y+1)%h!=0) {list[y]=list[y]+1; }
-                    }
 
+         void updateUser(int pos) {
+            user[pos].MouseUp -= mouseClick;
+            if (scheme[pos] != 0) {
+                user[pos].Text = scheme[pos] == 9 ? "☠" : scheme[pos].ToString();
+                switch (scheme[pos]) {
+                    case 1: user[pos].ForeColor = Color.Blue; break;
+                    case 2: user[pos].ForeColor = Color.Green; break;
+                    case 3: user[pos].ForeColor = Color.Red; break;
+                    case 4: user[pos].ForeColor = Color.DarkBlue; break;
+                    case 5: user[pos].ForeColor = Color.DarkRed; break;
+                    case 6: user[pos].ForeColor = Color.DarkCyan; break;
+                    case 7: user[pos].ForeColor = Color.White; break;
+                    case 8: user[pos].ForeColor = Color.DarkGray; break;
+                    case 9: user[pos].ForeColor = Color.DarkMagenta; break;
+                }
+            }
+            else if (user[pos].Text != "█") {
+                user[pos].Text = "█"; user[pos].ForeColor = Color.Gray;
+                int m1 = (int)numericUpDown1.Value;
+                if (pos % m1 != 0 && pos >= m1) { updateUser(pos - m1 - 1); }
+                if (pos >= m1) { updateUser(pos - m1); }
+                if ((pos + 1) % m1 != 0 && pos >= m1) { updateUser(pos - m1 + 1); }
+                if (pos % m1 != 0) { updateUser(pos - 1); }
+                if ((pos + 1) % m1 != 0) { updateUser(pos + 1); }
+                if (pos % m1 != 0 && pos < scheme.Count - m1) { updateUser(pos + m1 - 1); }
+                if (pos < scheme.Count - m1) { updateUser(pos + m1); }
+                if ((pos + 1) % m1 != 0 && pos < scheme.Count - m1) { updateUser(pos + m1 + 1); }
+            }
+        }
+
+         void generateScheme(int i) {
+            int m1 = (int)numericUpDown1.Value;
+            for (int a = 0; a < numericUpDown3.Value; a++) {
+                int h = rnd.Next(scheme.Count);
+                if (scheme[h] == 0 && h != i) { scheme[h] = 9; } else { a--; }
+            }
+            for (int a = 0; a < scheme.Count; a++) {
+                if (scheme[a] != 9) {
+                    if (a % m1 != 0 && a >= m1 && scheme[a - m1 - 1] == 9) { scheme[a]++; }
+                    if (a >= m1 && scheme[a - m1] == 9) { scheme[a]++; }
+                    if ((a + 1) % m1 != 0 && a >= m1 && scheme[a - m1 + 1] == 9) { scheme[a]++; }
+                    if (a % m1 != 0 && scheme[a - 1] == 9) { scheme[a]++; }
+                    if ((a + 1) % m1 != 0 && scheme[a + 1] == 9) { scheme[a]++; }
+                    if (a % m1 != 0 && a < scheme.Count - m1 && scheme[a + m1 - 1] == 9) { scheme[a]++; }
+                    if (a < scheme.Count - m1 && scheme[a + m1] == 9) { scheme[a]++; }
+                    if ((a + 1) % m1 != 0 && a < scheme.Count - m1 && scheme[a + m1 + 1] == 9) { scheme[a]++; }
                 }
             }
         }
-        private void generate() {
-            int old=0;
-            for(int a=0;a<numericUpDown1.Value;a++) {
-                for(int b=0;b<numericUpDown2.Value;b++) {
-                    Debug.Write(list[b+old]+" ");
-                }
-                Debug.WriteLine("");
-                old+=(int)numericUpDown1.Value;
-            }
-            Debug.WriteLine("\n");
-        }
-        private void changeColor(Point x) {
-            Color s=b.GetPixel(x.X,x.Y);
-            Debug.WriteLine(s);
-            int k=(x.X/16)*16;
-            int k1=(x.Y/16)*16;
-            Rectangle r=new Rectangle(k,k1,16,16);
-            if(s==Color.FromArgb(255,0,0,0)) {g.FillRectangle(new SolidBrush(Color.Yellow),r); }
-            else if(s==Color.FromArgb(255,255,255,0)) {g.FillRectangle(new SolidBrush(Color.Red),r);}
-            else if(s==Color.FromArgb(255,255,0,0)) {g.FillRectangle(new SolidBrush(Color.Black),r);}
-            drawScheme();
-            pictureBox1.Image=b;
-        }
-        private void recolor(Point x) {
-            int k=(x.X/16)*16;
-            int k1=(x.Y/16)*16;
-            Rectangle r=new Rectangle(k,k1,16,16);
-            g.FillRectangle(new SolidBrush(Color.Gray),r); 
-            drawScheme();
-            pictureBox1.Image=b;
-        }
-        List<bool>used=new List<bool>();
-        private int check(Point x) {
-            int xx=-1;
-            if(x.X>=0&&x.Y>=0&&x.X<numericUpDown1.Value*16&&x.Y<numericUpDown2.Value*16) { 
-             int k=(x.X/16)*16;
-            int k1=(x.Y/16)*16;
-             xx=(x.X/16)+((x.Y/16)*(int)numericUpDown1.Value);
-            if(!used[xx]) {return -1; } 
-            string u=list[xx]==0?" ":list[xx].ToString();
-             u=list[xx]==9?"X":u;
-            recolor(x);
-            g.DrawString(u,SystemFonts.DialogFont,new SolidBrush(Color.Violet),new Point(k+3,k1+1));
-           used[xx]=false;
-            if(u==" ") {
-                Point sx=new Point(x.X-16,x.Y-16);
-                check(sx);
-                sx=new Point(x.X,x.Y-16);
-                check(sx);
-                sx=new Point(x.X+16,x.Y-16);
-                check(sx);
-                sx=new Point(x.X-16,x.Y);
-                check(sx);
-                sx=new Point(x.X+16,x.Y);
-                check(sx);
-                sx=new Point(x.X-16,x.Y+16);
-                check(sx);
-                sx=new Point(x.X,x.Y+16);
-                check(sx);
-                sx=new Point(x.X+16,x.Y+16);
-                check(sx);
 
+         static Random rnd = new Random(Environment.TickCount);
+         static List<int> scheme = new List<int>();
+         static List<Button> user = new List<Button>();
+         static List<Button> extra = new List<Button>();
+
+         void start_Click(object sender, EventArgs e) {
+            createButton((int)numericUpDown1.Value * 24 - 83, (int)numericUpDown2.Value * 24 + 24, "Resa", Color.Red, numericUpDown1.Value * numericUpDown2.Value + 1);
+            createButton((int)numericUpDown1.Value * 24 - 35, (int)numericUpDown2.Value * 24 + 24, "Reset", Color.Violet, numericUpDown1.Value * numericUpDown2.Value + 2);
+            label4.Location = new Point(12, (int)numericUpDown2.Value * 24 + 24);
+            label5.Location = new Point(12, (int)numericUpDown2.Value * 24 + 50);
+            setLevel(false);
+            Size = new Size((int)numericUpDown1.Value * 24 + 50, (int)numericUpDown2.Value * 24 + 150);
+            for (int a = 0; a < numericUpDown2.Value; a++) {
+                for (int b = 0; b < numericUpDown1.Value; b++) { createButton(b * 24 + 12, a * 24 + 12, (int)(a * numericUpDown2.Value + b)); }
             }
-            return list[xx];
-            }
-          return -1;
-        }
-        
-        private void lose() {
-            timer1.Stop();
-            can=false;
-            reset.ForeColor=Color.Red;
-            label4.ForeColor=Color.Red;
-            label4.Text="Hai Perso!";
-            reset.Text="Reset";
-        }
-        private void win() {
-            timer1.Stop();
-            can=false;
-            reset.ForeColor=Color.Green;
-            label4.ForeColor=Color.Green;
-            label4.Text="Hai Vinto!";
-            reset.Text="Reset";
-        }
-        private void pictureBox1_MouseClick(object sender, MouseEventArgs e) {
-            if(can) { 
+            label5.Text = "00 : 00";
             timer1.Start();
-            Point mpos=MousePosition;
-            Point wpos=Location;
-            Point pos=new Point(mpos.X-wpos.X-33,mpos.Y-wpos.Y-43);
-            Debug.WriteLine(pos);
-            if(e.Button.ToString()=="Right") {
-               changeColor(pos);
-            }
-            if(e.Button.ToString()=="Left") {
-                int s=check(pos);pictureBox1.Image=b; 
-                if(s==9) {lose(); }
-                else {
-                    bool t=true;
-                    for(int a=0;a<used.Count;a++) {if(used[a]&&list[a]!=9) {t=false;} }
-                    if(t) {win(); }
+        }
+
+         void createButton(int x, int y, string text, Color col, decimal gg) {
+            Button s = new Button();
+            s.Location = new Point(x, y);
+            s.Size = new Size(48, 24);
+            s.BackColor = Color.Black;
+            s.ForeColor = col;
+            s.Text = text;
+            s.TabIndex = (int)gg;
+            s.FlatStyle = FlatStyle.Flat;
+            s.UseVisualStyleBackColor = true;
+            s.Click += new EventHandler(extraClick);
+            Controls.Add(s);
+            extra.Add(s);
+        }
+
+         void seeall() {
+            for (int a = 0; a < scheme.Count; a++) {
+                if (user[a].Text == "") { user[a].MouseUp -= mouseClick; }
+                switch (scheme[a]) {
+                    case 9: user[a].Text = "☠"; break;
+                    case 0: user[a].Text = "█"; break;
+                    default: user[a].Text = scheme[a].ToString(); ; break;
                 }
-            }
+                switch (scheme[a]) {
+                    case 0: user[a].ForeColor = Color.Gray; break;
+                    case 1: user[a].ForeColor = Color.Blue; break;
+                    case 2: user[a].ForeColor = Color.Green; break;
+                    case 3: user[a].ForeColor = Color.Red; break;
+                    case 4: user[a].ForeColor = Color.DarkBlue; break;
+                    case 5: user[a].ForeColor = Color.DarkRed; break;
+                    case 6: user[a].ForeColor = Color.DarkCyan; break;
+                    case 7: user[a].ForeColor = Color.White; break;
+                    case 8: user[a].ForeColor = Color.DarkGray; break;
+                    case 9: user[a].ForeColor = Color.DarkMagenta; break;
+                }
             }
         }
 
-        private void reset_Click(object sender, EventArgs e) {
-            if(reset.Text=="Resa") {
-                int w=pictureBox1.Size.Width/16;
-                int h=pictureBox1.Size.Height/16;
-                for(int a=0;a<w;a++) {
-                    for(int c=0;c<h;c++) {
-                        Debug.WriteLine(new Point(a*16,c*16));
-                        check(new Point(a*16,c*16));
-                    }
+         void extraClick(object sender, EventArgs e) {
+            label4.Visible = true; label4.Text = "Hai Perso"; label4.ForeColor = Color.Red;
+            int pos = extra.IndexOf((sender as Button));
+            timer1.Stop();
+            if (extra[pos].Text == "Resa") {
+                extra[0].Visible = false;
+                if (scheme.Count == 0) {
+                    scheme = Enumerable.Repeat(0, (int)(numericUpDown1.Value * numericUpDown2.Value)).ToList();
+                    generateScheme(rnd.Next(user.Count));
                 }
-                pictureBox1.Image=b;
-                can=false;
-                reset.ForeColor=Color.Red;
-                label4.ForeColor=Color.Red;
-                label4.Text="Hai Perso!";
-                reset.Text="Reset";
+                seeall();
             }
-            else if(reset.Text=="Reset") {
-                Size=new Size(248,264);
-                label5.Text="";
-                layout(true);
-                label4.Text="";
-                reset.Text="Resa";
+            else {
+                label4.Visible = false; label4.ForeColor = Color.Black;
+                scheme.Clear(); time = 0;
+                for (int a = 0; a < user.Count; a++) { Controls.Remove(user[a]); }
+                user.Clear();
+                for (int a = 0; a < 2; a++) { Controls.Remove(extra[a]); }
+                extra.Clear();
+                Size = new Size(300, 300);
+                setLevel(true);
             }
         }
-        int time=0;
-        bool can=true;
-        private void timer1_Tick(object sender, EventArgs e) {
+
+         void setLevel(bool x) {
+            label1.Visible = x;
+            label2.Visible = x;
+            label3.Visible = x;
+            numericUpDown1.Visible = x;
+            numericUpDown2.Visible = x;
+            numericUpDown3.Visible = x;
+            start.Visible = x;
+            label4.Visible = !x;
+            label5.Visible = !x;
+        }
+
+         void numericUpDown1_ValueChanged(object sender, EventArgs e) {
+            decimal h = numericUpDown1.Value * numericUpDown2.Value - 1;
+            if (numericUpDown3.Value > h) { numericUpDown3.Value = h; }
+            numericUpDown3.Maximum = h;
+        }
+
+         static int time = 0;
+
+         void MineSweeper_Load(object sender, EventArgs e) {
+            scheme.Clear(); user.Clear();
+            extra.Clear();
+            numericUpDown1.Maximum = (Screen.PrimaryScreen.Bounds.Width - 50) / 24;
+            numericUpDown2.Maximum = (Screen.PrimaryScreen.Bounds.Height - 150) / 24;
+        }
+
+         void timer1_Tick(object sender, EventArgs e) {
             time++;
-                int oth=time;
-                string final="";
-                if((oth/60)<10) {final+="0"; }
-                final+=(int)(oth/60)+" : ";
-                if((oth%60)<10) {final+="0"; }
-                final+=(oth%60).ToString();
-                label5.Text=final;
-            }
-        
+            string h = time % 60 < 10 ? "0" + (time % 60).ToString() : (time % 60).ToString();
+            string h1 = time / 60 < 10 ? "0" + ((int)(time / 60)).ToString() : ((int)(time / 60)).ToString();
+            label5.Text = h1 + " : " + h;
+        }
     }
 }

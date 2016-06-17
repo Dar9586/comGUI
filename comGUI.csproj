@@ -38,7 +38,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>..\..\Custom.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>..\..\Altro\Custom.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,10 +56,10 @@
   <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup>
-    <ManifestCertificateThumbprint>BCB742F912F5F7A6EC53CD30F7E3D2A11D59CDD0</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>B7E81F2F83D5C41D95AED0271B7F33A3C04ADED6</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>comGUI_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>comGUI_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -72,6 +72,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -93,23 +96,24 @@
     <Compile Include="Anagrammi.Designer.cs">
       <DependentUpon>Anagrammi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Giochi\Battaglia\BattagliaSetting.cs">
+    <Compile Include="Giochi\BlackJack.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Giochi\Battaglia\BattagliaSetting.Designer.cs">
-      <DependentUpon>BattagliaSetting.cs</DependentUpon>
+    <Compile Include="Giochi\BlackJack.Designer.cs">
+      <DependentUpon>BlackJack.cs</DependentUpon>
     </Compile>
-    <Compile Include="Giochi\Battaglia\Battaglia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Giochi\Battaglia\Battaglia.Designer.cs">
-      <DependentUpon>Battaglia.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Giochi\Cards.cs" />
     <Compile Include="Giochi\Galattron.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Giochi\Galattron.Designer.cs">
       <DependentUpon>Galattron.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\MineSweeper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\MineSweeper.Designer.cs">
+      <DependentUpon>MineSweeper.cs</DependentUpon>
     </Compile>
     <Compile Include="Giochi\SnakeSingle.cs">
       <SubType>Form</SubType>
@@ -177,12 +181,6 @@
     <Compile Include="Matematica\Notazione.Designer.cs">
       <DependentUpon>Notazione.cs</DependentUpon>
     </Compile>
-    <Compile Include="Giochi\Minesweeper.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Giochi\Minesweeper.Designer.cs">
-      <DependentUpon>Minesweeper.cs</DependentUpon>
-    </Compile>
     <Compile Include="Password\Password.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +198,23 @@
     </Compile>
     <Compile Include="Giochi\Piano.Designer.cs">
       <DependentUpon>Piano.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Sette e Mezzo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sette e Mezzo.Designer.cs">
+      <DependentUpon>Sette e Mezzo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Squash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pong.Designer.cs">
+      <DependentUpon>Squash.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -245,22 +260,17 @@
     <Compile Include="Giochi\Sudoku.Designer.cs">
       <DependentUpon>Sudoku.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Matematica\Ruffini.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Matematica\Ruffini.Designer.cs">
       <DependentUpon>Ruffini.cs</DependentUpon>
     </Compile>
-    <Compile Include="Test.cs">
+    <Compile Include="Giochi\SpinTheCircle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
+    <Compile Include="Giochi\SpinTheCircle.Designer.cs">
+      <DependentUpon>SpinTheCircle.cs</DependentUpon>
     </Compile>
     <Compile Include="Giochi\Tiles.cs">
       <SubType>Form</SubType>
@@ -274,23 +284,24 @@
     <Compile Include="Giochi\Tris.Designer.cs">
       <DependentUpon>Tris.cs</DependentUpon>
     </Compile>
-    <Compile Include="test1.cs">
+    <Compile Include="Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="test1.Designer.cs">
-      <DependentUpon>test1.cs</DependentUpon>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utility.cs" />
     <EmbeddedResource Include="Anagrammi.resx">
       <DependentUpon>Anagrammi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Giochi\Battaglia\Battaglia.resx">
-      <DependentUpon>Battaglia.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Giochi\Battaglia\BattagliaSetting.resx">
-      <DependentUpon>BattagliaSetting.cs</DependentUpon>
+    <EmbeddedResource Include="Giochi\BlackJack.resx">
+      <DependentUpon>BlackJack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Giochi\Galattron.resx">
       <DependentUpon>Galattron.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\MineSweeper.resx">
+      <DependentUpon>MineSweeper.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Giochi\SnakeSingle.resx">
       <DependentUpon>SnakeSingle.cs</DependentUpon>
@@ -331,9 +342,6 @@
     <EmbeddedResource Include="Matematica\Notazione.resx">
       <DependentUpon>Notazione.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Giochi\Minesweeper.resx">
-      <DependentUpon>Minesweeper.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Password\Password.resx">
       <DependentUpon>Password.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Giochi\Piano.resx">
       <DependentUpon>Piano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pong.resx">
+      <DependentUpon>Squash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -366,8 +377,8 @@
     <EmbeddedResource Include="Matematica\Ruffini.resx">
       <DependentUpon>Ruffini.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
+    <EmbeddedResource Include="Giochi\SpinTheCircle.resx">
+      <DependentUpon>SpinTheCircle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Giochi\Tiles.resx">
       <DependentUpon>Tiles.cs</DependentUpon>
@@ -375,12 +386,12 @@
     <EmbeddedResource Include="Giochi\Tris.resx">
       <DependentUpon>Tris.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="test1.resx">
-      <DependentUpon>test1.cs</DependentUpon>
+    <EmbeddedResource Include="Sette e Mezzo.resx">
+      <DependentUpon>Sette e Mezzo.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="comGUI_1_TemporaryKey.pfx" />
-    <None Include="comGUI_2_TemporaryKey.pfx" />
-    <None Include="comGUI_3_TemporaryKey.pfx" />
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="comGUI_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -399,7 +410,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 e x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -412,7 +423,105 @@
     <Resource Include="Res\Sudoku\SudokuScheme.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Res\Cards\Francesi\02clubs.png" />
+    <None Include="Res\Cards\Francesi\02diamonds.png" />
+    <None Include="Res\Cards\Francesi\02hearts.png" />
+    <None Include="Res\Cards\Francesi\02spades.png" />
+    <None Include="Res\Cards\Francesi\03clubs.png" />
+    <None Include="Res\Cards\Francesi\03diamonds.png" />
+    <None Include="Res\Cards\Francesi\03hearts.png" />
+    <None Include="Res\Cards\Francesi\03spades.png" />
+    <None Include="Res\Cards\Francesi\04clubs.png" />
+    <None Include="Res\Cards\Francesi\04diamonds.png" />
+    <None Include="Res\Cards\Francesi\04hearts.png" />
+    <None Include="Res\Cards\Francesi\04spades.png" />
+    <None Include="Res\Cards\Francesi\05clubs.png" />
+    <None Include="Res\Cards\Francesi\05diamonds.png" />
+    <None Include="Res\Cards\Francesi\05hearts.png" />
+    <None Include="Res\Cards\Francesi\05spades.png" />
+    <None Include="Res\Cards\Francesi\06clubs.png" />
+    <None Include="Res\Cards\Francesi\06diamonds.png" />
+    <None Include="Res\Cards\Francesi\06hearts.png" />
+    <None Include="Res\Cards\Francesi\06spades.png" />
+    <None Include="Res\Cards\Francesi\07clubs.png" />
+    <None Include="Res\Cards\Francesi\07diamonds.png" />
+    <None Include="Res\Cards\Francesi\07hearts.png" />
+    <None Include="Res\Cards\Francesi\07spades.png" />
+    <None Include="Res\Cards\Francesi\08clubs.png" />
+    <None Include="Res\Cards\Francesi\08diamonds.png" />
+    <None Include="Res\Cards\Francesi\08hearts.png" />
+    <None Include="Res\Cards\Francesi\08spades.png" />
+    <None Include="Res\Cards\Francesi\09clubs.png" />
+    <None Include="Res\Cards\Francesi\09diamonds.png" />
+    <None Include="Res\Cards\Francesi\09hearts.png" />
+    <None Include="Res\Cards\Francesi\09spades.png" />
+    <None Include="Res\Cards\Francesi\10clubs.png" />
+    <None Include="Res\Cards\Francesi\10diamonds.png" />
+    <None Include="Res\Cards\Francesi\10hearts.png" />
+    <None Include="Res\Cards\Francesi\10spades.png" />
+    <None Include="Res\Cards\Francesi\aceclubs.png" />
+    <None Include="Res\Cards\Francesi\acediamonds.png" />
+    <None Include="Res\Cards\Francesi\acehearts.png" />
+    <None Include="Res\Cards\Francesi\acespades.png" />
+    <None Include="Res\Cards\Francesi\black_back.png" />
+    <None Include="Res\Cards\Francesi\black_joker.png" />
+    <None Include="Res\Cards\Francesi\jackclubs2.png" />
+    <None Include="Res\Cards\Francesi\jackdiamonds2.png" />
+    <None Include="Res\Cards\Francesi\jackhearts2.png" />
+    <None Include="Res\Cards\Francesi\jackspades2.png" />
+    <None Include="Res\Cards\Francesi\kingclubs2.png" />
+    <None Include="Res\Cards\Francesi\kingdiamonds2.png" />
+    <None Include="Res\Cards\Francesi\kinghearts2.png" />
+    <None Include="Res\Cards\Francesi\kingspades2.png" />
+    <None Include="Res\Cards\Francesi\queenclubs2.png" />
+    <None Include="Res\Cards\Francesi\queendiamonds2.png" />
+    <None Include="Res\Cards\Francesi\queenhearts2.png" />
+    <None Include="Res\Cards\Francesi\queenspades2.png" />
+    <None Include="Res\Cards\Francesi\red_back.png" />
+    <None Include="Res\Cards\Francesi\red_joker.png" />
+    <None Include="Res\Cards\Napoletane\01Bastoni.png" />
+    <None Include="Res\Cards\Napoletane\01Coppe.png" />
+    <None Include="Res\Cards\Napoletane\01Denari.png" />
+    <None Include="Res\Cards\Napoletane\01Spade.png" />
+    <None Include="Res\Cards\Napoletane\02Bastoni.png" />
+    <None Include="Res\Cards\Napoletane\02Coppe.png" />
+    <None Include="Res\Cards\Napoletane\02Denari.png" />
+    <None Include="Res\Cards\Napoletane\02Spade.png" />
+    <None Include="Res\Cards\Napoletane\03Bastoni.png" />
+    <None Include="Res\Cards\Napoletane\03Coppe.png" />
+    <None Include="Res\Cards\Napoletane\03Denari.png" />
+    <None Include="Res\Cards\Napoletane\03Spade.png" />
+    <None Include="Res\Cards\Napoletane\04Bastoni.png" />
+    <None Include="Res\Cards\Napoletane\04Coppe.png" />
+    <None Include="Res\Cards\Napoletane\04Denari.png" />
+    <None Include="Res\Cards\Napoletane\04Spade.png" />
+    <None Include="Res\Cards\Napoletane\05Bastoni.png" />
+    <None Include="Res\Cards\Napoletane\05Coppe.png" />
+    <None Include="Res\Cards\Napoletane\05Denari.png" />
+    <None Include="Res\Cards\Napoletane\05Spade.png" />
+    <None Include="Res\Cards\Napoletane\06Bastoni.png" />
+    <None Include="Res\Cards\Napoletane\06Coppe.png" />
+    <None Include="Res\Cards\Napoletane\06Denari.png" />
+    <None Include="Res\Cards\Napoletane\06Spade.png" />
+    <None Include="Res\Cards\Napoletane\07Bastoni.png" />
+    <None Include="Res\Cards\Napoletane\07Coppe.png" />
+    <None Include="Res\Cards\Napoletane\07Denari.png" />
+    <None Include="Res\Cards\Napoletane\07Spade.png" />
+    <None Include="Res\Cards\Napoletane\08Bastoni.png" />
+    <None Include="Res\Cards\Napoletane\08Coppe.png" />
+    <None Include="Res\Cards\Napoletane\08Denari.png" />
+    <None Include="Res\Cards\Napoletane\08Spade.png" />
+    <None Include="Res\Cards\Napoletane\09Bastoni.png" />
+    <None Include="Res\Cards\Napoletane\09Coppe.png" />
+    <None Include="Res\Cards\Napoletane\09Denari.png" />
+    <None Include="Res\Cards\Napoletane\09Spade.png" />
+    <None Include="Res\Cards\Napoletane\10Bastoni.png" />
+    <None Include="Res\Cards\Napoletane\10Coppe.png" />
+    <None Include="Res\Cards\Napoletane\10Denari.png" />
+    <None Include="Res\Cards\Napoletane\10Spade.png" />
+    <None Include="Res\Cards\Napoletane\Cover.png" />
     <Content Include="Res\Galattron\InitChar.png" />
+    <None Include="Res\Pong\Scheme.png" />
     <Resource Include="Res\Galattron\Sound.wav" />
   </ItemGroup>
   <ItemGroup>

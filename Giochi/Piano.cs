@@ -10,39 +10,40 @@ namespace comGUI {
             InitializeComponent();
         this.FormClosing += back;
         }
-        private void back(object sender, EventArgs e) {
+         void back(object sender, EventArgs e) {
             if(Program.start.Visible==false) { 
             Program.start.Show();}
             else { 
                  Dispose();
                }
         }
-        private Bitmap b;
-        private Graphics g;
-        private void Piano_Load(object sender, EventArgs e) {
+        Random rnd=new Random(Environment.TickCount);
+         Bitmap b;
+         Graphics g;
+         void Piano_Load(object sender, EventArgs e) {
             b=new Bitmap(200,250);
             g=Graphics.FromImage(b);
             g.Clear(Color.White);
             
         }
 
-        private static Rectangle crea(int where,int hei) {
+         static Rectangle crea(int where,int hei) {
             return new Rectangle(where,hei,50,75);
         }
 
-        private void adding() {
-            listp.Add(new Point(comGUI.Menu.rnd.Next(4)*50,250));
+         void adding() {
+            listp.Add(new Point(rnd.Next(4)*50,250));
             listb.Add(false);
         }
 
         List<Point> listp=new List<Point>();
         List<bool> listb=new List<bool>();
-        private void grid(int start) {
+         void grid(int start) {
             for(int a=0;a<8;a++) {g.DrawLine(new Pen(Color.Black,1),0,start,200,start);start+=74; }
             int h=50;
             for(int a=0;a<3;a++) {g.DrawLine(new Pen(Color.Black,1),h,0,h,250);h+=50; }
         }
-        private void timer1_Tick(object sender, EventArgs e) {
+         void timer1_Tick(object sender, EventArgs e) {
            g.Clear(Color.White);
             grid(listp[0].Y);
             for(int a=0;a<listp.Count;a++) {
@@ -92,7 +93,7 @@ namespace comGUI {
     
     return base.ProcessCmdKey(ref msg, keyData);
         }
-        private void pictureBox1_Click(object sender, EventArgs e) {
+         void pictureBox1_Click(object sender, EventArgs e) {
             Point mpos=MousePosition;
             Point wpos=Location;
             Point pos=new Point(mpos.X-wpos.X-18,mpos.Y-wpos.Y-38);
@@ -123,7 +124,7 @@ namespace comGUI {
             }
         }
         Bitmap lo;
-        private void lose() {
+         void lose() {
             timer1.Stop();
             button1.Visible=true;
             listb.Clear();
@@ -132,7 +133,7 @@ namespace comGUI {
             poi=0;
             button1.Text="Reset";
         }
-        private void button1_Click(object sender, EventArgs e) {
+         void button1_Click(object sender, EventArgs e) {
             label1.Text="Punteggio : 0";
             g.Clear(Color.White);
             pictureBox1.Image=b;

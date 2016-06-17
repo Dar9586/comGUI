@@ -127,6 +127,9 @@
   <data name="LEnemy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\galattron\lenemy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Pongscheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Pong\Scheme.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="RChar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\galattron\rchar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,5 +141,296 @@
   </data>
   <data name="SudokuScheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\res\sudoku\sudokuscheme.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="aceclubs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\aceclubs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="acediamonds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\acediamonds.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="acehearts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\acehearts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="acespades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\acespades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\black_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="black_joker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\black_joker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\Cover.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jackclubs2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\jackclubs2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jackdiamonds2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\jackdiamonds2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jackhearts2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\jackhearts2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="jackspades2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\jackspades2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kingclubs2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\kingclubs2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kingdiamonds2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\kingdiamonds2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kinghearts2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\kinghearts2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kingspades2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\kingspades2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="queenclubs2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\queenclubs2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="queendiamonds2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\queendiamonds2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="queenhearts2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\queenhearts2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="queenspades2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\queenspades2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="red_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\red_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="red_joker" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\red_joker.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_01Bastoni" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\01Bastoni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_01Coppe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\01Coppe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_01Denari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\01Denari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_01Spade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\01Spade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_02Bastoni" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\02Bastoni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_02clubs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\02clubs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_02Coppe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\02Coppe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_02Denari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\02Denari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_02diamonds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\02diamonds.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_02hearts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\02hearts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_02Spade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\02Spade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_02spades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\02spades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_03Bastoni" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\03Bastoni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_03clubs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\03clubs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_03Coppe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\03Coppe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_03Denari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\03Denari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_03diamonds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\03diamonds.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_03hearts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\03hearts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_03Spade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\03Spade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_03spades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\03spades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_04Bastoni" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\04Bastoni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_04clubs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\04clubs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_04Coppe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\04Coppe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_04Denari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\04Denari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_04diamonds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\04diamonds.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_04hearts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\04hearts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_04Spade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\04Spade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_04spades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\04spades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_05Bastoni" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\05Bastoni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_05clubs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\05clubs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_05Coppe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\05Coppe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_05Denari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\05Denari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_05diamonds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\05diamonds.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_05hearts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\05hearts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_05Spade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\05Spade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_05spades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\05spades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_06Bastoni" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\06Bastoni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_06clubs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\06clubs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_06Coppe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\06Coppe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_06Denari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\06Denari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_06diamonds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\06diamonds.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_06hearts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\06hearts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_06Spade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\06Spade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_06spades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\06spades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_07Bastoni" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\07Bastoni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_07clubs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\07clubs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_07Coppe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\07Coppe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_07Denari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\07Denari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_07diamonds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\07diamonds.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_07hearts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\07hearts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_07Spade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\07Spade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_07spades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\07spades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_08Bastoni" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\08Bastoni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_08clubs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\08clubs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_08Coppe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\08Coppe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_08Denari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\08Denari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_08diamonds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\08diamonds.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_08hearts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\08hearts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_08Spade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\08Spade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_08spades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\08spades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_09Bastoni" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\09Bastoni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_09clubs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\09clubs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_09Coppe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\09Coppe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_09Denari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\09Denari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_09diamonds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\09diamonds.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_09hearts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\09hearts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_09Spade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\09Spade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_09spades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\09spades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10Bastoni" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\10Bastoni.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10clubs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\10clubs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10Coppe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\10Coppe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10Denari" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\10Denari.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10diamonds" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\10diamonds.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10hearts" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\10hearts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10Spade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Napoletane\10Spade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_10spades" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Res\Cards\Francesi\10spades.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -8,17 +8,17 @@ namespace comGUI {
             InitializeComponent();
             this.FormClosing+=back;
         }
-        private void back(object sender, EventArgs e) {
+         void back(object sender, EventArgs e) {
            m.Show(); m.mem.Dispose();
         }
-        private void button1_Click(object sender, EventArgs e) {
+         void button1_Click(object sender, EventArgs e) {
             m.mem.lose();
             button1.Visible=false;
             button2.Visible=true;
             label4.Visible=true;
             label4.ForeColor=Color.Red;
         }
-        private void button2_Click(object sender, EventArgs e) {
+         void button2_Click(object sender, EventArgs e) {
             m.Show(); m.mem.Dispose();this.Dispose();
         }
         public void timer1_Tick(object sender, EventArgs e) {
@@ -33,6 +33,6 @@ namespace comGUI {
         }
 
         public MemorySetting m;
-        private int time=0;
+         int time=0;
     }
 }

@@ -7,30 +7,29 @@ namespace comGUI {
     public partial class SnakeSingle : Form {
         public SnakeSingle() {
             InitializeComponent();
-            for(int a=0;a<9999;a++) {comGUI.Menu.rnd.Next(56465); }
         this.FormClosing += back;
         }
 
-        private void back(object sender, EventArgs e) {
+         void back(object sender, EventArgs e) {
             if(Program.start.Visible==false) { 
             Program.start.Show();}
             else { 
                  Dispose();
                }
         }
-
-        private Rectangle r(int x1,int y1) {
+        Random rnd=new Random(Environment.TickCount);
+         Rectangle r(int x1,int y1) {
             return new Rectangle(new Point(x1,y1),new Size(20,20));
         }
         
-        private void SnakeSingle_Load(object sender, EventArgs e) {
+         void SnakeSingle_Load(object sender, EventArgs e) {
             b=new Bitmap(484,461);
             g=Graphics.FromImage(b);
             g.Clear(Color.Black);
             pictureBox1.Image=b;
         }
         
-        private List<Point> generate() {
+         List<Point> generate() {
             List<Point> s= new List<Point>();
             if(dire==1) {s.Add(new Point(x,y+20));s.Add(new Point(x+20,y+20));s.Add(new Point(x+10,y)); }
             if(dire==2) {s.Add(new Point(x+20,y));s.Add(new Point(x+20,y+20));s.Add(new Point(x,y+10)); }
@@ -39,7 +38,7 @@ namespace comGUI {
             return s;
         }
 
-        private void timer2_Tick(object sender, EventArgs e) {
+         void timer2_Tick(object sender, EventArgs e) {
             if(dire==1) {y-=20 ;}
             if(dire==2) {x-=20 ;}
             if(dire==3) {x+=20 ;}
@@ -67,9 +66,9 @@ namespace comGUI {
             changed=true;
         }
 
-        private void spawn() {
+         void spawn() {
             while(true) { 
-                fruit1=comGUI.Menu.rnd.Next(24)*20;fruit2=comGUI.Menu.rnd.Next(23)*20;
+                fruit1=rnd.Next(24)*20;fruit2=rnd.Next(23)*20;
                 bool bre=true;
                 for(int a=0;a<posx.Count-1;a++) {if(posx[a]==fruit1&&posy[a]==fruit2) {bre=false; } }
                 if(bre) {break; }
@@ -78,7 +77,7 @@ namespace comGUI {
                 g.FillRectangle(new SolidBrush(Color.Red),r(fruit1,fruit2));
         }
 
-        private void lose() {
+         void lose() {
             Text="Hai perso!  Clicca sulla schemata per rincominciare.        Score: "+(len-4).ToString();
             g.Clear(Color.Black);
             for(int a=0;a<posx.Count;a++) {g.DrawRectangle(new Pen(Color.Cyan,1),r(posx[a],posy[a]));
@@ -88,12 +87,12 @@ namespace comGUI {
             pictureBox1.Image=b;
             len=4;x=180;y=160;posx.Clear();posy.Clear();timer2.Stop();changed=false; }
 
-        private void start() {
+         void start() {
             if(!timer2.Enabled) {
                 Text="Score: 0";
                  g.Clear(Color.Black);
                 spawn();
-            dire=comGUI.Menu.rnd.Next(4)+1;
+            dire=rnd.Next(4)+1;
                 g.DrawRectangle(new Pen(Color.Orange,1),r(x,y));
             g.FillRectangle(new SolidBrush(Color.Orange),r(x,y));
             posx.Add(x);
@@ -103,7 +102,7 @@ namespace comGUI {
             changed=true;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e) {start();}
+         void pictureBox1_Click(object sender, EventArgs e) {start();}
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
     {
@@ -130,11 +129,11 @@ namespace comGUI {
     return true;
     }
         
-        private Bitmap b;
-        private Graphics g;
+         Bitmap b;
+         Graphics g;
         
-        private List<int> posx=new List<int>(),posy=new List<int>();
-        private int x=180,y=160,len=4,dire=4,fruit1=0,fruit2=0;
-        private bool changed=true;
+         List<int> posx=new List<int>(),posy=new List<int>();
+         int x=180,y=160,len=4,dire=4,fruit1=0,fruit2=0;
+         bool changed=true;
     }
 }

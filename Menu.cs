@@ -1,167 +1,79 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Drawing;
 
 namespace comGUI {
     public partial class Menu : Form {
-         
+        static List<Button>lst=new List<Button>();
         public Menu() {
             InitializeComponent();
         }
-
-        private void back(object sender, EventArgs e) {
-            if (Program.start.Visible == false) {
-                Program.start.Show();
+        void cb(int s,int y,string z,int ind,Size size) {
+            Button x=new Button();
+            x.BackColor = Color.Black;
+            x.FlatStyle = FlatStyle.Flat;
+            x.ForeColor = Color.Cyan;
+            x.Location = new Point(s, y);
+            x.Name = "button"+ind.ToString();
+            x.Size = size;
+            x.TabIndex = ind;
+            x.Text = z;
+            x.UseVisualStyleBackColor = false;
+            x.Click += new EventHandler(buttonClick);
+            lst.Add(x);Controls.Add(x);
+        }
+        void buttonClick(object sender, EventArgs e) {
+            int sen=lst.IndexOf((sender as Button));
+            Form s=null;
+            switch(sen) {
+                case 0 :s=new Test();break;
+                case 1 :s=new First();break;
+                case 2 :s=new MCD();break;
+                case 3 :s=new Tris();break;
+                case 4 :s=new Game2048();break;
+                case 5 :s=new Calcolatrice();break;
+                case 6 :s=new Convertitore();break;
+                case 7 :s=new Tiles();break;
+                case 8 :s=new Scomposizione();break;
+                case 9 :s=new Semplificazione();break;
+                case 10:s=new Notazione();break;
+                case 11:s=new Password();break;
+                case 12:s=new Simon();break;
+                case 13:s=new MemorySetting();break;
+                case 14:s=new SwitchSetting();break;
+                case 15:s=new SnakeSingle();break;
+                case 16:s=new Sudoku();break;
+                case 17:s=new Piano();break;
+                case 18:s=new Anagrammi();break;
+                case 19:s=new Galattron();break;
+                case 20:s=new MineSweeper();break;
+                case 21:s=new Squash();break;
+                case 22:s=new Ruffini();break;
+                case 23:s=new SpinTheCircle();break;
+                case 24:s=new BlackJack();break;
+                case 25:s=new Sette_e_Mezzo();break;
+            }if(lst[sen].Text!="WIP") { s.Show();Hide(); }
+        }
+        List<string>title=new List<string> {
+            "Test",
+            "First","MCD","Tris","2048",
+            "Calcolatrice","Convertitore","Tiles","Scomposizione",
+            "Semplificazione","Notazione","Password","Simon",
+            "Memory","Switch","Snake","Sudoku",
+            "Piano","Anagrammi","Galattron","MineSweeper",
+            "Squash","Ruffini","SpinTheCircle","BlackJack",
+            "Sette e Mezzo"
+        };
+        private void Menu_Load(object sender, EventArgs e) {
+            cb(12,278,title[0],0,new Size(394, 40));
+            lst[0].ForeColor=Color.Red;
+            for(int a=0;a<7;a++) {
+                for(int b=0;b<4;b++) {
+                    cb(101*b+12,29*a+12,(a*4+b+1)>=title.Count?"WIP":title[a*4+b+1],a*4+b+1,new Size(95, 23));
+                }
             }
-            else {
-                Dispose();
-            }
-        }
-        public static Random rnd=new Random(Environment.TickCount);
-        private void button1_Click(object sender, EventArgs e) {
-            First s=new First();
-            s.Show();
-            this.Hide();
-        }
-         
-        private void button2_Click(object sender, EventArgs e) {
-             MCD s=new MCD();
-            s.Show();
-            this.Hide();
-        }
-        private void button3_Click(object sender, EventArgs e) {
-            Tris s=new Tris();
-            s.Show();
-            this.Hide();
         }
 
-        private void button4_Click(object sender, EventArgs e) {
-            Game2048 s=new Game2048();
-            s.Show();
-            this.Hide();
-        }
-
-        private void button5_Click(object sender, EventArgs e) {
-            Calcolatrice s=new Calcolatrice();
-            s.Show();
-            this.Hide();
-        }
-
-        private void button6_Click(object sender, EventArgs e) {
-            Convertitore s=new Convertitore();
-            s.Show();
-            this.Hide();
-        }
-
-        private void button7_Click(object sender, EventArgs e) {
-            Tiles s=new Tiles();
-            s.Show();
-            this.Hide();
-        }
-
-        private void button8_Click(object sender, EventArgs e) {
-            Scomposizione s=new Scomposizione();
-            s.Show();
-            this.Hide();
-        }
-
-        private void button9_Click(object sender, EventArgs e) {
-            Semplificazione s=new Semplificazione();
-            s.Show();
-            this.Hide();
-        }
-
-        private void button10_Click(object sender, EventArgs e) {
-            Notazione s=new Notazione();
-            s.Show();
-            this.Hide();
-        }
-
-        private void button11_Click(object sender, EventArgs e) {
-            Password s=new Password();
-            s.Show();
-            this.Hide();
-        }
-
-        private void button12_Click(object sender, EventArgs e) {
-            Simon s=new Simon();
-            s.Show();
-            this.Hide();
-        }
-
-        public void button13_Click(object sender, EventArgs e) {
-            Test s=new Test();
-            s.Show();
-        }
-
-        public void button14_Click(object sender, EventArgs e) {
-            MemorySetting s=new MemorySetting();
-            s.Show();
-            this.Hide();
-        }
-
-        private void button15_Click(object sender, EventArgs e) {
-            SwitchSetting s=new SwitchSetting();
-            s.Show();
-            this.Hide();
-        }
-
-        private void button16_Click(object sender, EventArgs e) {
-            SnakeSingle s=new SnakeSingle();
-            s.Show();
-            this.Hide();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e) {
-            rnd.Next();
-        }
-
-        private void button17_Click(object sender, EventArgs e) {
-            Sudoku s=new Sudoku();
-            s.Show();
-            this.Hide();
-        
-        }
-
-        private void button18_Click(object sender, EventArgs e) {
-            Piano s=new Piano();
-            s.Show();
-            this.Hide();
-        }
-
-        private void button19_Click(object sender, EventArgs e) {
-            Anagrammi s=new Anagrammi();
-            s.Show();
-            this.Hide();
-        }
-
-        private void button20_Click(object sender, EventArgs e) {
-            Galattron s=new Galattron();
-            s.Show();
-            this.Hide();
-        }
-
-        private void button21_Click(object sender, EventArgs e) {
-            Minesweeper s=new Minesweeper();
-            s.Show();
-            this.Hide();
-        }
-
-        private void button22_Click(object sender, EventArgs e) {
-            test1 s=new test1();
-            s.Show();
-            this.Hide();
-        }
-
-        private void button23_Click(object sender, EventArgs e) {
-            Ruffini s=new Ruffini();
-            s.Show();
-            this.Hide();
-        }
-
-        private void button24_Click(object sender, EventArgs e) {
-            BattagliaSetting s=new BattagliaSetting();
-            s.Show();
-            this.Hide();
-        }
     }
 }
