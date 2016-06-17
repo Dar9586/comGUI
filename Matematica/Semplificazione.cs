@@ -14,7 +14,7 @@ namespace comGUI {
             InitializeComponent();
          this.FormClosing += back;
         }
-        private void textBox1_TextChanged(object sender, EventArgs e) {
+         void textBox1_TextChanged(object sender, EventArgs e) {
           List<char> n=new List<char>(textBox1.Text.ToCharArray());
             bool ok=true;
        for(int a=0;a<n.Count;a++) {if(!num.Contains(n[a])) { ok=false;} }
@@ -25,7 +25,7 @@ namespace comGUI {
             }
        else {textBox1.Text=oldtex1; }
         }
-        private void textBox2_TextChanged(object sender, EventArgs e) {
+         void textBox2_TextChanged(object sender, EventArgs e) {
             List<char> n=new List<char>(textBox2.Text.ToCharArray());
             bool ok=true;
        for(int a=0;a<n.Count;a++) {if(!num.Contains(n[a])) { ok=false;} }
@@ -36,7 +36,7 @@ namespace comGUI {
             }
        else {textBox2.Text=oldtex1; }
         }
-        private void timer1_Tick(object sender, EventArgs e) {
+         void timer1_Tick(object sender, EventArgs e) {
             if(num1!=0&&num2!=0) {
                 long nu;
                 if(num1<num2) {nu=num1; }
@@ -49,7 +49,7 @@ namespace comGUI {
                 label1.Text="Semplificato per "+nu.ToString();
             }else {label1.Text=label3.Text=label4.Text=""; }
         }
-        private void back(object sender, EventArgs e) {
+         void back(object sender, EventArgs e) {
             if(Program.start.Visible==false) { 
             Program.start.Show();}
             else { 
@@ -57,9 +57,9 @@ namespace comGUI {
                }
         }
 
-        private List<char> num=new List<char>("0123456789".ToCharArray());
-        private string oldtex1="";
-        private string oldtex2="";
-        private long num1=0,num2=0;
+         List<char> num=new List<char>("0123456789".ToCharArray());
+         string oldtex1="";
+         string oldtex2="";
+         long num1=0,num2=0;
     }
 }

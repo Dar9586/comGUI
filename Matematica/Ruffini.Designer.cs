@@ -3,7 +3,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -22,7 +22,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+         void InitializeComponent() {
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -340,25 +340,25 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox var;
-        private System.Windows.Forms.TextBox numb;
-        private System.Windows.Forms.TextBox expo;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox final;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button7;
+         System.Windows.Forms.TextBox textBox2;
+         System.Windows.Forms.TextBox textBox3;
+         System.Windows.Forms.Button button1;
+         System.Windows.Forms.TextBox var;
+         System.Windows.Forms.TextBox numb;
+         System.Windows.Forms.TextBox expo;
+         System.Windows.Forms.Button button2;
+         System.Windows.Forms.TextBox final;
+         System.Windows.Forms.Button button3;
+         System.Windows.Forms.Button button4;
+         System.Windows.Forms.Label label1;
+         System.Windows.Forms.Button button5;
+         System.Windows.Forms.Button button6;
+         System.Windows.Forms.TextBox textBox1;
+         System.Windows.Forms.Label label2;
+         System.Windows.Forms.Label label3;
+         System.Windows.Forms.Label label4;
+         System.Windows.Forms.Label label5;
+         System.Windows.Forms.Label label6;
+         System.Windows.Forms.Button button7;
     }
 }

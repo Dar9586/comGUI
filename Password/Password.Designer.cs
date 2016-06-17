@@ -3,7 +3,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -22,7 +22,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+         void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.upp = new System.Windows.Forms.CheckBox();
             this.low = new System.Windows.Forms.CheckBox();
@@ -250,21 +250,21 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox upp;
-        private System.Windows.Forms.CheckBox low;
-        private System.Windows.Forms.CheckBox spe;
-        private System.Windows.Forms.CheckBox num;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox use;
-        private System.Windows.Forms.TextBox len;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox save;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.TextBox path;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox how;
-        private System.Windows.Forms.Label label3;
+         System.Windows.Forms.CheckBox upp;
+         System.Windows.Forms.CheckBox low;
+         System.Windows.Forms.CheckBox spe;
+         System.Windows.Forms.CheckBox num;
+         System.Windows.Forms.Label label1;
+         System.Windows.Forms.TextBox use;
+         System.Windows.Forms.TextBox len;
+         System.Windows.Forms.Label label2;
+         System.Windows.Forms.CheckBox save;
+         System.Windows.Forms.SaveFileDialog saveFileDialog1;
+         System.Windows.Forms.TextBox path;
+         System.Windows.Forms.Button button1;
+         System.Windows.Forms.Timer timer1;
+         System.Windows.Forms.Button button2;
+         System.Windows.Forms.TextBox how;
+         System.Windows.Forms.Label label3;
     }
 }

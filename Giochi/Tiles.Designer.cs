@@ -3,7 +3,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+         System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -22,7 +22,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+         void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -119,10 +119,10 @@
         }
 
         #endregion
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button start;
-        private System.Windows.Forms.Label label3;
+         System.Windows.Forms.Timer timer1;
+         System.Windows.Forms.Label label1;
+         System.Windows.Forms.Label label2;
+         System.Windows.Forms.Button start;
+         System.Windows.Forms.Label label3;
     }
 }

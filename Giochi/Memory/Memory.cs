@@ -10,7 +10,8 @@ namespace comGUI {
             InitializeComponent();
         this.FormClosing += back;
         }
-        private async void buttonClick(object sender, EventArgs e) {
+        Random rnd=new Random(Environment.TickCount);
+         async void buttonClick(object sender, EventArgs e) {
             m.memmen.timer1.Start();
             try { 
             if(m.memmen.timer1.Enabled==false) { m.memmen.timer1.Start();}
@@ -38,7 +39,7 @@ namespace comGUI {
             }
          }}catch(ArgumentOutOfRangeException) {list[list.IndexOf((sender as Button))].Text=""; }
             }
-        private void create(int x,int y,string tag,int tab) {
+         void create(int x,int y,string tag,int tab) {
             Button s=new Button();
             s.Location = new Point(x, y);
             s.Size = new Size(24, 24);
@@ -53,7 +54,7 @@ namespace comGUI {
             Controls.Add(s);
             list.Add(s);
         }
-        private void timer1_Tick(object sender, EventArgs e) {
+         void timer1_Tick(object sender, EventArgs e) {
             try { if(ooo) {m.memmen.Show(); }}catch(ObjectDisposedException) { }
             x=m.a*m.b/2;
             m.memmen.label2.Text="Completamento: "+find.ToString()+" / "+x.ToString();
@@ -62,15 +63,15 @@ namespace comGUI {
             int g=(int)sss1;
             if(find==x) { m.memmen.label4.Visible=m.memmen.button2.Visible=true;m.memmen.button1.Visible=false;}
         }
-        private void back(object sender, EventArgs e) {
+         void back(object sender, EventArgs e) {
            m.Show(); m.memmen.Dispose();
         }
         public void createscheme(int k) {
             
-            for(int a=0;a<99999;a++) {comGUI.Menu.rnd.Next(1944465); }  
+            for(int a=0;a<99999;a++) {rnd.Next(1944465); }  
             List<char> li = new List<char> ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".ToCharArray());
             for(int b=0;b<1250;b++) {
-               string s=li[comGUI.Menu.rnd.Next(li.Count)].ToString()+li[comGUI.Menu.rnd.Next(li.Count)].ToString();
+               string s=li[rnd.Next(li.Count)].ToString()+li[rnd.Next(li.Count)].ToString();
                 if(!lis.Contains(s)) {lis.Add(s); }else {b--; }
             }
              List<string> ca=new List<string>(lis.GetRange(0,k));
@@ -78,13 +79,13 @@ namespace comGUI {
                     for(int c=0;c<j;c++) {ca.Add(ca[c]); } 
                     j=ca.Count;
                 while(ca.Count>0) { 
-                int l=comGUI.Menu.rnd.Next(ca.Count);
+                int l=rnd.Next(ca.Count);
                 final.Add(ca[l]);ca.RemoveAt(l);
                  }
             int x=5,y=2,z=0;
             for(int b=0;b<m.a;b++) {
                 for(int a=0;a<m.b;a++) {
-                    int h=comGUI.Menu.rnd.Next(final.Count);
+                    int h=rnd.Next(final.Count);
                     create(x,y,final[h],(z*m.a)+a);
                     final.RemoveAt(h);
                     x+=26;
@@ -103,13 +104,13 @@ namespace comGUI {
             m.memmen.label4.Text="Hai Perso!";
         }
 
-        private List<string> final=new List<string>();
-        private List<string> lis=new List<string>();
+         List<string> final=new List<string>();
+         List<string> lis=new List<string>();
         List<Button> list=new List<Button>();
         public MemorySetting m;
         public bool ooo=false;
         public bool sw=false;
-        private int f=9999;
+         int f=9999;
         public int find=0;
         public int x=1;
     }

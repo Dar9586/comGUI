@@ -8,9 +8,9 @@ namespace comGUI {
         public Game2048() {
             InitializeComponent();
             this.FormClosing += back;
-            for(int a=0;a<9999;a++) {comGUI.Menu.rnd.Next(897697); }
+            for(int a=0;a<9999;a++) {rnd.Next(897697); }
         }
-        private static bool equa(List<int> x,List<int> y) {
+         static bool equa(List<int> x,List<int> y) {
             bool k=x.Count==y.Count;
             if(k) { 
             for(int a=0;a<x.Count;a++) {
@@ -19,7 +19,7 @@ namespace comGUI {
             }
             return k;
         }
-        private static List<int> assign(List<int> x,List<Button> y) {
+         static List<int> assign(List<int> x,List<Button> y) {
             x.Clear();
             for(int a=0;a<16;a++) {
                 if(y[a].Text!="") { 
@@ -29,7 +29,7 @@ namespace comGUI {
             }
             return x;
         }
-        private static List<int> move(List<int> list, int num1, int num2)
+         static List<int> move(List<int> list, int num1, int num2)
 		{
 			if (list[num2] == 0 && list[num1] != 0)
 			{
@@ -47,7 +47,7 @@ namespace comGUI {
 			}
 			return list;
 		}
-		private static List<int> moveUp(List<int> list,List<Button> lis)
+		 static List<int> moveUp(List<int> list,List<Button> lis)
 		{
             list=assign(list,lis);
 			for (int a = 0; a < 5; a++)
@@ -67,7 +67,7 @@ namespace comGUI {
 			}
 			return list;
 		}
-		private static List<int> moveDown(List<int> list,List<Button> lis)
+		 static List<int> moveDown(List<int> list,List<Button> lis)
 		{
             list=assign(list,lis);
 			for (int a = 0; a < 5; a++)
@@ -87,7 +87,7 @@ namespace comGUI {
 			}
 			return list;
 		}
-		private static List<int> moveLeft(List<int> list,List<Button> lis)
+		 static List<int> moveLeft(List<int> list,List<Button> lis)
 		{
             list=assign(list,lis);
 			for (int a = 0; a < 5; a++)
@@ -107,7 +107,7 @@ namespace comGUI {
 			}
 			return list;
 		}
-		private static List<int> moveRight(List<int> list,List<Button> lis)
+		 static List<int> moveRight(List<int> list,List<Button> lis)
 		{
             list=assign(list,lis);
 			for (int a = 0; a < 5; a++)
@@ -127,7 +127,7 @@ namespace comGUI {
 			}
 			return list;
 		}
-        private void back(object sender, EventArgs e) {
+         void back(object sender, EventArgs e) {
             if(Program.start.Visible==false) { 
             Program.start.Show();}
             else { 
@@ -161,7 +161,7 @@ namespace comGUI {
     return base.ProcessCmdKey(ref msg, keyData);
         }
         
-        private void start_Click(object sender, EventArgs e) {
+         void start_Click(object sender, EventArgs e) {
             start.Visible=false;
             label1.Visible=true;
             label2.Visible=true;
@@ -170,30 +170,31 @@ namespace comGUI {
             right.Visible=true;
             down.Visible=true;
             start.Text="Rincomicia";
-            int h=comGUI.Menu.rnd.Next(16);
+            int h=rnd.Next(16);
             poi=0;label2.Text="0";
             lis.Clear();
             for(int a=0;a<16;a++) {list[a].Text="";lis.Add(0); }
             list[h].Text="2";
             lis[h]=1;
             }
-        private void up_Click(object sender, EventArgs e) {
+         void up_Click(object sender, EventArgs e) {
              moveU();
         }
-        private void left_Click(object sender, EventArgs e) {
+        Random rnd=new Random(Environment.TickCount);
+         void left_Click(object sender, EventArgs e) {
               moveL();
         }
-        private void right_Click(object sender, EventArgs e) {
+         void right_Click(object sender, EventArgs e) {
              moveR();
         }
-        private void down_Click(object sender, EventArgs e) {
+         void down_Click(object sender, EventArgs e) {
             moveD();
         }
-        private void moveD() {lis=moveDown(lis,list);
-            int h=comGUI.Menu.rnd.Next(3);
+         void moveD() {lis=moveDown(lis,list);
+            int h=rnd.Next(3);
             if(h!=0&& lis.Contains(0)) {
                 while(true) {
-                    int k=comGUI.Menu.rnd.Next(16);
+                    int k=rnd.Next(16);
                     if(lis[k]==0) {lis[k]=2;list[k].Text="2"; break;}
                 }
             }
@@ -208,11 +209,11 @@ namespace comGUI {
                 if(up.Visible==false&&down.Visible==false&&left.Visible==false&&right.Visible==false) {
                     start.Visible=true;
                 }   }
-        private void moveU() {lis=moveUp(lis,list);
-            int h=comGUI.Menu.rnd.Next(3);
+         void moveU() {lis=moveUp(lis,list);
+            int h=rnd.Next(3);
             if(h!=0&& lis.Contains(0)) {
                 while(true) {
-                    int k=comGUI.Menu.rnd.Next(16);
+                    int k=rnd.Next(16);
                     if(lis[k]==0) {lis[k]=2;list[k].Text="2"; break;}
                 }
             }
@@ -227,11 +228,11 @@ namespace comGUI {
                 if(up.Visible==false&&down.Visible==false&&left.Visible==false&&right.Visible==false) {
                     start.Visible=true;
                 } }
-        private void moveL() {lis=moveLeft(lis,list);
-            int h=comGUI.Menu.rnd.Next(3);
+         void moveL() {lis=moveLeft(lis,list);
+            int h=rnd.Next(3);
             if(h!=0&& lis.Contains(0)) {
                 while(true) {
-                    int k=comGUI.Menu.rnd.Next(16);
+                    int k=rnd.Next(16);
                     if(lis[k]==0) {lis[k]=2;list[k].Text="2"; break;}
                 }
             }
@@ -246,11 +247,11 @@ namespace comGUI {
                 if(up.Visible==false&&down.Visible==false&&left.Visible==false&&right.Visible==false) {
                     start.Visible=true;
                 }  }
-        private void moveR() {lis=moveRight(lis,list);
-            int h=comGUI.Menu.rnd.Next(3);
+         void moveR() {lis=moveRight(lis,list);
+            int h=rnd.Next(3);
             if(h!=0&& lis.Contains(0)) {
                 while(true) {
-                    int k=comGUI.Menu.rnd.Next(16);
+                    int k=rnd.Next(16);
                     if(lis[k]==0) {lis[k]=2;list[k].Text="2"; break;}
                 }
             }
@@ -268,7 +269,7 @@ namespace comGUI {
 
         
 
-        private void createButton(int x,int y) {
+         void createButton(int x,int y) {
             Button s=new Button();
             s.Location = new Point(x, y);
             s.Size = new Size(52, 52);
@@ -280,14 +281,14 @@ namespace comGUI {
             list.Add(s);
         }
 
-        private List<Button>list=new List<Button>();
-        private List<int>lis=new List<int>();
+         List<Button>list=new List<Button>();
+         List<int>lis=new List<int>();
         
         public static bool s=true;
         public static int poi2=0;
         public static int poi=0;
 
-        private void Game2048_Load(object sender, EventArgs e) {
+         void Game2048_Load(object sender, EventArgs e) {
             List<int> s=new List<int> {12,70,128,186 };
             for(int a=0;a<4;a++) {
                 for(int b=0;b<4;b++) {

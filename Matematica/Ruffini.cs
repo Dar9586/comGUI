@@ -15,14 +15,14 @@ namespace comGUI {
             InitializeComponent();
         this.FormClosing += back;
         }
-        private void back(object sender, EventArgs e) {
+         void back(object sender, EventArgs e) {
             if(Program.start.Visible==false) { 
             Program.start.Show();}
             else { 
                  Dispose();
                }
         }
-        private bool assign(bool where,string s){
+         bool assign(bool where,string s){
             if(where) { 
                     if (s!=""&&s!="-") { num.Add(int.Parse(s));}
                     else if (s=="-") {s+="1"; num.Add(int.Parse(s));}
@@ -38,7 +38,7 @@ namespace comGUI {
         List<string>listfinal=new List<string>();
         List<char>allownum=new List<char>("0123456789".ToCharArray());
         List<char>allowsym=new List<char>("+-^".ToCharArray());
-        private void button1_Click(object sender, EventArgs e) {
+         void button1_Click(object sender, EventArgs e) {
             string o=numb.Text;
             string oo=expo.Text;
             if(o==""&&oo=="") { }
@@ -60,7 +60,7 @@ namespace comGUI {
             }
         }
 
-        private void button2_Click(object sender, EventArgs e) {
+         void button2_Click(object sender, EventArgs e) {
             if(var.Text.Length==1) { 
                 var.Visible=false;
                 button2.Visible=false;
@@ -88,7 +88,7 @@ namespace comGUI {
             }
         }
 
-        private void button3_Click(object sender, EventArgs e) {
+         void button3_Click(object sender, EventArgs e) {
                 var.Visible=true;
                 button2.Visible=true;
                 numb.Visible=false;
@@ -116,7 +116,7 @@ namespace comGUI {
             
         }
         string solnumb="";
-        private void numb_TextChanged(object sender, EventArgs e) {
+         void numb_TextChanged(object sender, EventArgs e) {
             List<char>allowed=new List<char>("0123456789".ToCharArray());
             bool pass=true;
             for(int a=0;a<numb.Text.Length;a++) {if(!allowed.Contains(numb.Text[a])) {pass=false;break; } }
@@ -124,7 +124,7 @@ namespace comGUI {
             else {numb.Text=solnumb; }
         }
         string oldexpo="";
-        private void expo_TextChanged(object sender, EventArgs e) {
+         void expo_TextChanged(object sender, EventArgs e) {
             List<char>allowed=new List<char>("0123456789".ToCharArray());
             bool pass=true;
             for(int a=0;a<expo.Text.Length;a++) {if(!allowed.Contains(expo.Text[a])) {pass=false;break; } }
@@ -132,7 +132,7 @@ namespace comGUI {
             else {expo.Text=oldexpo; }
         }
 
-        private void button4_Click(object sender, EventArgs e) {
+         void button4_Click(object sender, EventArgs e) {
             textBox2.Text=textBox3.Text="";
             if(textBox1.Text=="") {textBox1.Text="1"; }
             List<int>newnum=new List<int>();
@@ -161,7 +161,7 @@ namespace comGUI {
                 }
         }
 
-        private void calc(List<int>fir,int s) {
+         void calc(List<int>fir,int s) {
             int h=esp.Max()-1;
             int y=0;
             for(int a=0;a<fir.Count;a++) {
@@ -185,15 +185,15 @@ namespace comGUI {
 
         }
 
-        private void button5_Click(object sender, EventArgs e) {
+         void button5_Click(object sender, EventArgs e) {
             button5.Text=button5.Text=="+"?"-":"+";
         }
 
-        private void button6_Click(object sender, EventArgs e) {
+         void button6_Click(object sender, EventArgs e) {
             button6.Text=button6.Text=="+"?"-":"+";
         }
         string oldte="";
-        private void textBox1_TextChanged(object sender, EventArgs e) {
+         void textBox1_TextChanged(object sender, EventArgs e) {
             List<char>allowed=new List<char>("0123456789".ToCharArray());
             bool pass=true;
             for(int a=0;a<textBox1.Text.Length;a++) {if(!allowed.Contains(textBox1.Text[a])) {pass=false;break; } }
@@ -201,7 +201,7 @@ namespace comGUI {
             else {textBox1.Text=oldte; }
         }
 
-        private void button7_Click(object sender, EventArgs e) {
+         void button7_Click(object sender, EventArgs e) {
             if(esp.Count>0) { 
              esp.RemoveAt(esp.Count-1);
             num.RemoveAt(num.Count-1);
@@ -210,11 +210,11 @@ namespace comGUI {
                 }
         }
 
-        private void final_MouseEnter(object sender, EventArgs e) {
+         void final_MouseEnter(object sender, EventArgs e) {
 
         }
 
-        private void var_TextChanged(object sender, EventArgs e) {
+         void var_TextChanged(object sender, EventArgs e) {
             List<char>allowed=new List<char>("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray());
             try { if(!allowed.Contains(var.Text[0])) {var.Text=""; }}catch(IndexOutOfRangeException) {}
         }
