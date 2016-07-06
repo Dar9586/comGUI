@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Antonio\Desktop\Informatica\</PublishUrl>
+    <PublishUrl>C:\Users\Antonio\Desktop\Test\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -39,6 +39,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>..\..\Altro\Custom.ruleset</CodeAnalysisRuleSet>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,7 +52,7 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>comGUI.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup />
@@ -67,15 +68,17 @@
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -95,6 +98,24 @@
     </Compile>
     <Compile Include="Anagrammi.Designer.cs">
       <DependentUpon>Anagrammi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Arkanoid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arkanoid.Designer.cs">
+      <DependentUpon>Arkanoid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Browser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Browser.Designer.cs">
+      <DependentUpon>Browser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forza4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forza4.Designer.cs">
+      <DependentUpon>Forza4.cs</DependentUpon>
     </Compile>
     <Compile Include="Giochi\BlackJack.cs">
       <SubType>Form</SubType>
@@ -284,6 +305,12 @@
     <Compile Include="Giochi\Tris.Designer.cs">
       <DependentUpon>Tris.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ten.Designer.cs">
+      <DependentUpon>Ten.cs</DependentUpon>
+    </Compile>
     <Compile Include="Test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -293,6 +320,15 @@
     <Compile Include="Utility.cs" />
     <EmbeddedResource Include="Anagrammi.resx">
       <DependentUpon>Anagrammi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Arkanoid.resx">
+      <DependentUpon>Arkanoid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Browser.resx">
+      <DependentUpon>Browser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forza4.resx">
+      <DependentUpon>Forza4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Giochi\BlackJack.resx">
       <DependentUpon>BlackJack.cs</DependentUpon>
@@ -351,9 +387,6 @@
     <EmbeddedResource Include="Giochi\Piano.resx">
       <DependentUpon>Piano.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pong.resx">
-      <DependentUpon>Squash.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -388,6 +421,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Sette e Mezzo.resx">
       <DependentUpon>Sette e Mezzo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Squash.resx">
+      <DependentUpon>Squash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ten.resx">
+      <DependentUpon>Ten.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>

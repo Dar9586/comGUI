@@ -49,6 +49,13 @@ namespace comGUI {
                 case 1:data[1]=data[1]==0?1:0;break;
             }
         }
+        private void button1_Click(object sender, EventArgs e) {
+            data=new List<int> {(sender as Button).TabIndex,rnd.Next(2),0,0 };
+            button1.Visible=false;button2.Visible=false;label1.Visible=true;label2.Visible=true;
+            updatePoint();
+            for(int a=0;a<9;a++) {but[a].Visible=true; }
+            if(data[0]==0&&data[1]==1) {AI();data[1]=0; }
+        }
         int chk(List<int>x,bool up,int s) {label3.Text=data[0]==0?"Hai Perso!":"Vince il giocatore 2";but[x[0]].ForeColor=Color.Coral;but[x[1]].ForeColor=Color.Coral;but[x[2]].ForeColor=Color.Coral;if(up)data[3]++;return s; }
         private int checkWin(bool up) {
             string str="";for(int a=0;a<9;a++) {str+=but[a].Text; }
@@ -81,13 +88,7 @@ namespace comGUI {
             label1.Text=(data[0]==0?"Giocatore : ":"Giocatore 1 : ")+data[2].ToString();
             label2.Text=(data[0]==0?"Computer  : ":"Giocatore 2 : ")+data[3].ToString();
         }
-        private void button1_Click(object sender, EventArgs e) {
-            data=new List<int> {(sender as Button).TabIndex,rnd.Next(2),0,0 };
-            button1.Visible=false;button2.Visible=false;label1.Visible=true;label2.Visible=true;
-            updatePoint();
-            for(int a=0;a<9;a++) {but[a].Visible=true; }
-            if(data[0]==0&&data[1]==1) {AI();data[1]=0; }
-        }
+        
         bool check(string x,List<int> num,string comp) {
             string y=x[num[0]].ToString()+x[num[1]].ToString()+x[num[2]].ToString();
             return y==comp;}
