@@ -21,26 +21,49 @@ namespace comGUI {
                  Dispose();
                }
         }
-        PictureBox create(int x,Bitmap btm) {
-            PictureBox x1=new PictureBox();
-            x1.Image=btm;
-            x1.Size=new Size(75,100);
-            x1.BackColor=Color.White;
-            x1.Location=new Point(x,0);
-            panel1.Controls.Add(x1);
-            return x1;
-        }
-        
-         void button1_Click(object sender, EventArgs e) {
-            //for(int a=0;a<40;a++) {create(80*a,lst[a].Image);}
-            Cards s=new Cards(Properties.Resources.queenspades2,5);
-            Console.WriteLine(s.Value);
-        }
 
-        private void panel1_Scroll(object sender, ScrollEventArgs e) {
-            panel1.HorizontalScroll.LargeChange=80;
-            panel1.HorizontalScroll.SmallChange=80;
-            //panel1.HorizontalScroll.Value+=80;
+         void button1_Click(object sender, EventArgs e) {
+            int windowTop = Top; 
+            int windowLeft = Left;
+            Bitmap s=new Bitmap(306, 568);
+            Graphics g=Graphics.FromImage(s);
+            g.CopyFromScreen(new Point(Left+13+8,Top+13+31),new Point(0,0),new Size(306, 568));
+            pictureBox2.Image=s;
+            Bitmap s1=new Bitmap(pictureBox1.Image);
+            Bitmap s2=new Bitmap(pictureBox2.Image);
+            Console.WriteLine(compare(s1,s2));
+
         }
+        private bool compare(Bitmap bmp1, Bitmap bmp2) 
+{
+    bool equals = true;
+    bool flag = true;  //Inner loop isn't broken
+
+    //Test to see if we have the same size of image
+    if (bmp1.Size == bmp2.Size)
+    {
+        for (int x = 0; x < bmp1.Width; ++x)
+        {
+            for (int y = 0; y < bmp1.Height; ++y)
+            {
+                if (bmp1.GetPixel(x, y) != bmp2.GetPixel(x, y))
+                {
+                    equals = false;
+                    flag = false;
+                    break;
+                }
+            }
+            if (!flag)
+            {
+                break;
+            }
+        }
+    }
+    else
+    {
+        equals = false;
+    }
+    return equals;
+}
     }
 }

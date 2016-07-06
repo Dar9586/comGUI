@@ -109,7 +109,7 @@ namespace comGUI {
 
         public Cards(Bitmap imag, int valu, Size size) {
             val = valu;
-            image=ResizeImage(imag, size);
+            image=Utility.ResizeImage(imag, size);
         }
         public Cards(Bitmap imag, int val) : this(imag, val, new Size(75, 100)) {
         }
@@ -121,12 +121,5 @@ namespace comGUI {
 
         public int Value { get { return val; } set { val = value; } }
         public Bitmap Image { get { return image; } }
-        public static Bitmap ResizeImage(Bitmap x, Size size) {
-            Bitmap s = x;
-            Bitmap o = new Bitmap(size.Width, size.Height);
-            Graphics g = Graphics.FromImage(o);
-            g.DrawImage(s, 0, 0, size.Width, size.Height);
-            return o;
-        }
     }
 }
