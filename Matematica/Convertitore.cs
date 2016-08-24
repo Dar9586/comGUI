@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -10,14 +11,15 @@ namespace comGUI {
             InitializeComponent();
              FormClosing += back;
         }
-        //List<int>maxlen=new List<int>{0,0,63,40,32,28,25,23,21,20,19,19,18,18,17,17,16,16,16,15,15,15,15,14,14,14,14,14,14,13,13,13,13,13,13,13,13 };
          void numericUpDown1_ValueChanged(object sender, EventArgs e) {
             int s=(int)numericUpDown1.Value;
             if(numericUpDown1.Value<min) {numericUpDown1.Value=min;}
-            else if(numericUpDown1.Value>36) {numericUpDown1.Value=36; }
-            long num=to10(textBox1.Text,(int)numericUpDown1.Value);
+            List<int>maxlen=new List<int>{0,0,63,40,32,28,25,23,21,20,19,19,18,18,17,17,16,16,16,15,15,15,15,14,14,14,14,14,14,13,13,13,13,13,13,13,13};
+            if(textBox1.Text.Length>maxlen[(int)numericUpDown1.Value]) {textBox1.Text=textBox1.Text.Substring(0,maxlen[(int)numericUpDown1.Value]); }
+            textBox1.MaxLength=maxlen[(int)numericUpDown1.Value];
+            /*ulong num=to10(textBox1.Text,(int)numericUpDown1.Value);
              str=toOther(num);
-            format();
+            format();*/
         }
          void textBox1_TextChanged(object sender, EventArgs e) {
             List<char>cha=new List<char>(textBox1.Text.ToCharArray());
@@ -34,9 +36,9 @@ namespace comGUI {
             if(max<2) { max=2;}
             min=max;
                 if (numericUpDown1.Value<min) {numericUpDown1.Value=min;}
-            long num=to10(textBox1.Text,(int)numericUpDown1.Value);
+            /*ulong num=to10(textBox1.Text,(int)numericUpDown1.Value);
              str=toOther(num);
-               format();
+               format();*/
             }
             else {textBox1.Text=old; }
         }
@@ -57,34 +59,36 @@ namespace comGUI {
 			str.Append(array);
 			return str;
 		}
-         long to10(string num,int bas ) {
+         ulong to10(string num,int bas ) {
             List<char> allo=new List<char>("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray());
              List<int> n=new List<int>();
             for(int a=0;a<num.Length;a++) {
                 n.Add(allo.IndexOf(num.ToCharArray()[a]));
+                
             }
-            long final=0;
-            for(int a=0;a<n.Count;a++) { final+=n[a]*(long)Math.Pow(bas,n.Count-a-1); }
+            ulong final=0;
+            for(int a=0;a<n.Count;a++) {Debug.WriteLine(n[a]+"*"+bas+"^"+(n.Count-a-1)+"+"); final+=(ulong)n[a]*(ulong)Math.Pow(bas,n.Count-a-1); }
             return final;}
-         List<string> toOther(long num) {
+         List<string> toOther(ulong num) {
             List<char> allo=new List<char>("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray());
             List<int> n=new List<int>();
             List<string> final=new List<string>();
+            try { 
             for(int a=0;a<35;a++) {
                 n.Clear();
-                long nn=num;
+                ulong nn=num;
                 while(nn!=0) {
-                    n.Add((int)(nn%(a+2)));nn=(long)(nn/(a+2));
+                       // Debug.WriteLine(nn+" "+(a+2)+" "+((int)(nn%(ulong)(a+2))));
+                    n.Add((int)(nn%(ulong)(a+2)));nn=(ulong)(nn/(ulong)(a+2));
                 }
                 string part="";
                 for(int b=0;b<n.Count;b++) {
-                    try { 
-                    part+=allo[n[b]].ToString();}catch(ArgumentOutOfRangeException) {part=".eritrevnoc elibissopmI";break;}
+                    part+=allo[n[b]].ToString();
                 }
+                //Debug.WriteLine(part);
                 part=rev(part).ToString();
                 final.Add(part);
-            }
-            if(final.Contains("Impossibile convertire.")) {final.Clear();for(int a=0;a<35;a++) {final.Add("Impossibile convertire.");} }
+            }}catch(ArgumentOutOfRangeException) {final.Clear();for(int a=0;a<35;a++) {final.Add("Impossibile convertire.");}}
             return final;
         }
          void format() {
@@ -104,5 +108,12 @@ namespace comGUI {
           List<string> str=new List<string>();
          string old="";
          int min=2;
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ulong num=to10(textBox1.Text,(int)numericUpDown1.Value);
+             str=toOther(num);
+             format();
+        }
     }
 }

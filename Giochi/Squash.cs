@@ -80,7 +80,6 @@ namespace comGUI {
          void timer1_Tick(object sender, EventArgs e) {
             if((int)data[6]==70) {
                 int y=(int)data[0]+20,z=(int)data[7];
-                Console.WriteLine(y+" "+z);
                 if(y<=(z+10)&&(y+100)>=z) {data[3]=1;data[8]=(int)data[8]+1;label1.Text=data[8].ToString();}
             }
             else if((int)data[6]==20){timer1.Stop();button1.Visible=true;}

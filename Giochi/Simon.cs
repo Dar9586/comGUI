@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
 
 namespace comGUI {
     public partial class Simon : Form {
@@ -72,7 +71,6 @@ namespace comGUI {
             ok=false;
             await Task.Delay(350);
             for(int a=0;a<list.Count;a++) {
-                //Debug.Write(list[a]+" ");
                 int j=list[a];
                 if(j==0) {C=Color.Cyan; }
                 else if(j==1) {Y=Color.Yellow; }
@@ -81,7 +79,6 @@ namespace comGUI {
                 await Task.Delay(350);
                 recolor();
                 await Task.Delay(50);}
-            //Debug.WriteLine("");
             ok=true;}    
          void recolor() {
                 C=Color.DarkCyan;

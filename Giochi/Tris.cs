@@ -56,7 +56,7 @@ namespace comGUI {
             for(int a=0;a<9;a++) {but[a].Visible=true; }
             if(data[0]==0&&data[1]==1) {AI();data[1]=0; }
         }
-        int chk(List<int>x,bool up,int s) {label3.Text=data[0]==0?"Hai Perso!":"Vince il giocatore 2";but[x[0]].ForeColor=Color.Coral;but[x[1]].ForeColor=Color.Coral;but[x[2]].ForeColor=Color.Coral;if(up)data[3]++;return s; }
+        int chk(List<int>x,bool up,int s) {label3.Text=data[0]==0?"Hai Perso!":"Vince il giocatore 2";but[x[0]].ForeColor=Color.Coral;but[x[1]].ForeColor=Color.Coral;but[x[2]].ForeColor=Color.Coral;if(up)data[s==1?3:2]++;return s; }
         private int checkWin(bool up) {
             string str="";for(int a=0;a<9;a++) {str+=but[a].Text; }
                  if(check(str,new List<int>{0,1,2},"OOO")) {return chk(new List<int>{0,1,2},up,1);}

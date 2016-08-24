@@ -28,7 +28,7 @@ namespace comGUI {
                     else if (s=="-") {s+="1"; num.Add(int.Parse(s));}
                     }
                     else {
-                    if (s!=""&&s!="-") {Debug.WriteLine(s); esp.Add(int.Parse(s));where=true;}
+                    if (s!=""&&s!="-") {esp.Add(int.Parse(s));where=true;}
                     else {esp.Add(1);where=true; }
                     }
             return where;

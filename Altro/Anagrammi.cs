@@ -82,7 +82,6 @@ namespace comGUI {
             await Task.Delay(50);
             richTextBox1.Text+=textBox1.Text;
             for(int a=0;a<start2.Count;a++) {if(!start.Contains(start2[a])) {start.Add(start2[a]);} }
-            Debug.WriteLine("");
             for(int a=0;a<start.Count;a++) {
                 List<char>cac2=new List<char>(start);
                 List<char>cac=new List<char>(start2);
