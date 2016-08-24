@@ -57,6 +57,7 @@ namespace comGUI {
                 case 27:s=new Arkanoid();break;
                 case 28:s=new Browser();break;
                 case 29:s=new Forza4();break;
+                case 30:s=new Game1010();break;
             }if(lst[sen].Text!="WIP") { s.Show();Hide(); }
         }
         List<string>title=new List<string> {
@@ -68,12 +69,12 @@ namespace comGUI {
             "Piano","Anagrammi","Galattron","MineSweeper",
             "Squash","Ruffini","SpinTheCircle","BlackJack",
             "Sette e Mezzo","Ten","Arkanoid","Browser",
-            "Forza 4",
+            "Forza 4","1010",
         };
         private void Menu_Load(object sender, EventArgs e) {
             cb(12,278,title[0],0,new Size(394, 40));
             lst[0].ForeColor=Color.Red;
-            int wid=4,hei=8;
+            int wid=4,hei=title.Count/4+(title.Count%4==0?0:1);
             for(int a=0;a<hei;a++) {
                 for(int b=0;b<wid;b++) {
                     cb(101*b+12,29*a+12,(a*wid+b+1)>=title.Count?"WIP":title[a*wid+b+1],a*wid+b+1,new Size(95, 23));

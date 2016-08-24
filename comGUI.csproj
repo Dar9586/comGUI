@@ -57,7 +57,7 @@
   <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B7E81F2F83D5C41D95AED0271B7F33A3C04ADED6</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>CACDE9AFF98BAA2871539FABEC36495415E941EB</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>comGUI_TemporaryKey.pfx</ManifestKeyFile>
@@ -80,8 +80,17 @@
   <PropertyGroup />
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -93,28 +102,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Anagrammi.cs">
+    <Compile Include="Altro\Anagrammi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Anagrammi.Designer.cs">
+    <Compile Include="Altro\Anagrammi.Designer.cs">
       <DependentUpon>Anagrammi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Arkanoid.cs">
+    <Compile Include="Game1010.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Arkanoid.Designer.cs">
+    <Compile Include="Game1010.Designer.cs">
+      <DependentUpon>Game1010.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Arkanoid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Arkanoid.Designer.cs">
       <DependentUpon>Arkanoid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Browser.cs">
+    <Compile Include="Altro\Browser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Browser.Designer.cs">
+    <Compile Include="Altro\Browser.Designer.cs">
       <DependentUpon>Browser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forza4.cs">
+    <Compile Include="Giochi\Forza4.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forza4.Designer.cs">
+    <Compile Include="Giochi\Forza4.Designer.cs">
       <DependentUpon>Forza4.cs</DependentUpon>
     </Compile>
     <Compile Include="Giochi\BlackJack.cs">
@@ -154,10 +169,10 @@
     <Compile Include="Matematica\Convertitore.Designer.cs">
       <DependentUpon>Convertitore.cs</DependentUpon>
     </Compile>
-    <Compile Include="First.cs">
+    <Compile Include="Altro\First.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="First.Designer.cs">
+    <Compile Include="Altro\First.Designer.cs">
       <DependentUpon>First.cs</DependentUpon>
     </Compile>
     <Compile Include="Giochi\Game2048.cs">
@@ -202,16 +217,16 @@
     <Compile Include="Matematica\Notazione.Designer.cs">
       <DependentUpon>Notazione.cs</DependentUpon>
     </Compile>
-    <Compile Include="Password\Password.cs">
+    <Compile Include="Altro\Password\Password.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Password\Password.Designer.cs">
+    <Compile Include="Altro\Password\Password.Designer.cs">
       <DependentUpon>Password.cs</DependentUpon>
     </Compile>
-    <Compile Include="Password\PasswordResult.cs">
+    <Compile Include="Altro\Password\PasswordResult.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Password\PasswordResult.Designer.cs">
+    <Compile Include="Altro\Password\PasswordResult.Designer.cs">
       <DependentUpon>PasswordResult.cs</DependentUpon>
     </Compile>
     <Compile Include="Giochi\Piano.cs">
@@ -225,16 +240,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Sette e Mezzo.cs">
+    <Compile Include="Giochi\Sette e Mezzo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sette e Mezzo.Designer.cs">
+    <Compile Include="Giochi\Sette e Mezzo.Designer.cs">
       <DependentUpon>Sette e Mezzo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Squash.cs">
+    <Compile Include="Giochi\Squash.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pong.Designer.cs">
+    <Compile Include="Giochi\Pong.Designer.cs">
       <DependentUpon>Squash.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -305,10 +320,10 @@
     <Compile Include="Giochi\Tris.Designer.cs">
       <DependentUpon>Tris.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ten.cs">
+    <Compile Include="Giochi\Ten.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ten.Designer.cs">
+    <Compile Include="Giochi\Ten.Designer.cs">
       <DependentUpon>Ten.cs</DependentUpon>
     </Compile>
     <Compile Include="Test.cs">
@@ -317,17 +332,20 @@
     <Compile Include="Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utility.cs" />
-    <EmbeddedResource Include="Anagrammi.resx">
+    <Compile Include="Altro\Utility.cs" />
+    <EmbeddedResource Include="Altro\Anagrammi.resx">
       <DependentUpon>Anagrammi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Arkanoid.resx">
+    <EmbeddedResource Include="Game1010.resx">
+      <DependentUpon>Game1010.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Arkanoid.resx">
       <DependentUpon>Arkanoid.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Browser.resx">
+    <EmbeddedResource Include="Altro\Browser.resx">
       <DependentUpon>Browser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forza4.resx">
+    <EmbeddedResource Include="Giochi\Forza4.resx">
       <DependentUpon>Forza4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Giochi\BlackJack.resx">
@@ -354,7 +372,7 @@
     <EmbeddedResource Include="Matematica\Convertitore.resx">
       <DependentUpon>Convertitore.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="First.resx">
+    <EmbeddedResource Include="Altro\First.resx">
       <DependentUpon>First.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Giochi\Game2048.resx">
@@ -378,10 +396,10 @@
     <EmbeddedResource Include="Matematica\Notazione.resx">
       <DependentUpon>Notazione.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Password\Password.resx">
+    <EmbeddedResource Include="Altro\Password\Password.resx">
       <DependentUpon>Password.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Password\PasswordResult.resx">
+    <EmbeddedResource Include="Altro\Password\PasswordResult.resx">
       <DependentUpon>PasswordResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Giochi\Piano.resx">
@@ -419,19 +437,20 @@
     <EmbeddedResource Include="Giochi\Tris.resx">
       <DependentUpon>Tris.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sette e Mezzo.resx">
+    <EmbeddedResource Include="Giochi\Sette e Mezzo.resx">
       <DependentUpon>Sette e Mezzo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Squash.resx">
+    <EmbeddedResource Include="Giochi\Squash.resx">
       <DependentUpon>Squash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ten.resx">
+    <EmbeddedResource Include="Giochi\Ten.resx">
       <DependentUpon>Ten.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="comGUI_TemporaryKey.pfx" />
+    <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
