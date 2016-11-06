@@ -21,11 +21,15 @@ namespace comGUI {
                  Dispose();
                }
         }
+        Graphics img;
+        Bitmap s=new Bitmap(500,500);
         private void Test_Load(object sender, EventArgs e)
         {
-            Bitmap s=new Bitmap(500,500);
-            Graphics img=Graphics.FromImage(s);
-            img.Clear(Color.Black);
+        }
+
+        int hjj=0;
+        private void timer2_Tick(object sender, EventArgs e) {
+            Console.WriteLine(hjj++);
         }
     }
 }

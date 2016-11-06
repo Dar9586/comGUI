@@ -108,10 +108,16 @@
     <Compile Include="Altro\Anagrammi.Designer.cs">
       <DependentUpon>Anagrammi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Game1010.cs">
+    <Compile Include="Dama.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Game1010.Designer.cs">
+    <Compile Include="Dama.Designer.cs">
+      <DependentUpon>Dama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Giochi\Game1010.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Giochi\Game1010.Designer.cs">
       <DependentUpon>Game1010.cs</DependentUpon>
     </Compile>
     <Compile Include="Giochi\Arkanoid.cs">
@@ -333,10 +339,19 @@
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
     <Compile Include="Altro\Utility.cs" />
+    <Compile Include="Tower.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tower.Designer.cs">
+      <DependentUpon>Tower.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Altro\Anagrammi.resx">
       <DependentUpon>Anagrammi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Game1010.resx">
+    <EmbeddedResource Include="Dama.resx">
+      <DependentUpon>Dama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Giochi\Game1010.resx">
       <DependentUpon>Game1010.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Giochi\Arkanoid.resx">
@@ -448,6 +463,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tower.resx">
+      <DependentUpon>Tower.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="comGUI_TemporaryKey.pfx" />
     <None Include="packages.config" />

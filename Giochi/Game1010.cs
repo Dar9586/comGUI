@@ -261,9 +261,16 @@ namespace comGUI
             pb.Show();
             pb.Location=pictureBox1.PointToClient(Cursor.Position);
             simpleGrap=Graphics.FromImage(simpleImage);
-            Point h=pictureBox1.PointToClient(Cursor.Position);
-            try { simpleGrap.DrawImage(im.Clone(new Rectangle(pictureBox1.PointToClient(Cursor.Position),block[selectedBlock].getSize(true)),im.PixelFormat),new Point(0,0)); }catch {pb.Hide(); }
-            drawBlock(block[selectedBlock],false,simpleGrap);
+            Point p=pictureBox1.PointToClient(Cursor.Position);
+            if(p.X>-1&&p.X<1000&&p.Y>-1&&p.Y<600) { 
+            Size s=block[selectedBlock].getSize(true);
+            int lx=p.X+s.Width,ly=p.Y+s.Height;
+            int flx=s.Width,fly=s.Height;
+            if(lx>1000) {flx-=(lx-1000); }
+            if (ly>600) {fly-=(ly-600); }
+            try { simpleGrap.DrawImage(im.Clone(new Rectangle(p,new Size(flx,fly)),im.PixelFormat),new Point(0,0)); }catch {pb.Hide(); }
+                }else { pb.Hide();}
+                drawBlock(block[selectedBlock],false,simpleGrap);
             pb.Image=simpleImage;
         }
         private void pb_Mouse(object sender, EventArgs e)

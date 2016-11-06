@@ -47,11 +47,10 @@
             // 
             // pb
             // 
-            this.pb.BackColor = System.Drawing.Color.Navy;
-            this.pb.Location = new System.Drawing.Point(37, 63);
+            this.pb.Location = new System.Drawing.Point(12, 12);
             this.pb.Name = "pb";
-            this.pb.Size = new System.Drawing.Size(1, 1);
-            this.pb.TabIndex = 2;
+            this.pb.Size = new System.Drawing.Size(10, 10);
+            this.pb.TabIndex = 1;
             this.pb.TabStop = false;
             this.pb.Visible = false;
             this.pb.MouseEnter += new System.EventHandler(this.pb_Mouse);
@@ -67,8 +66,10 @@
             this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.pb);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Game1010";
-            this.Text = "Game1010";
+            this.Text = "1010";
             this.Load += new System.EventHandler(this.Game1010_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb)).EndInit();
