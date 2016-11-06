@@ -58,6 +58,8 @@ namespace comGUI {
                 case 28:s=new Browser();break;
                 case 29:s=new Forza4();break;
                 case 30:s=new Game1010();break;
+                case 31:s=new Tower();break;
+                case 32:s=new Dama();break;
             }if(lst[sen].Text!="WIP") { s.Show();Hide(); }
         }
         List<string>title=new List<string> {
@@ -69,7 +71,8 @@ namespace comGUI {
             "Piano","Anagrammi","Galattron","MineSweeper",
             "Squash","Ruffini","SpinTheCircle","BlackJack",
             "Sette e Mezzo","Ten","Arkanoid","Browser",
-            "Forza 4","1010",
+            "Forza 4","1010","The Tower","Dama",
+
         };
         private void Menu_Load(object sender, EventArgs e) {
             cb(12,278,title[0],0,new Size(394, 40));
