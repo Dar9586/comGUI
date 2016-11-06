@@ -7,7 +7,7 @@ namespace comGUI {
 
         public static Menu start=new Menu();
         /// <summary>
-        /// Punto di ingresso principale dell'applicazione.
+        /// Main application access point.
         /// </summary>
         [STAThread]
         static void Main() {

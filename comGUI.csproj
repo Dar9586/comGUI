@@ -108,10 +108,10 @@
     <Compile Include="Altro\Anagrammi.Designer.cs">
       <DependentUpon>Anagrammi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dama.cs">
+    <Compile Include="Giochi\Dama.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dama.Designer.cs">
+    <Compile Include="Giochi\Dama.Designer.cs">
       <DependentUpon>Dama.cs</DependentUpon>
     </Compile>
     <Compile Include="Giochi\Game1010.cs">
@@ -348,7 +348,7 @@
     <EmbeddedResource Include="Altro\Anagrammi.resx">
       <DependentUpon>Anagrammi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dama.resx">
+    <EmbeddedResource Include="Giochi\Dama.resx">
       <DependentUpon>Dama.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Giochi\Game1010.resx">
